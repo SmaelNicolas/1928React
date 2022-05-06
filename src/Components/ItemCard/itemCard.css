@@ -1,0 +1,35 @@
+.card {
+	width: 250px;
+	height: 400px;
+	margin: 10px;
+}
+
+.cardContainer {
+	width: 250px;
+	height: 400px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cardImg {
+	width: 213px;
+	height: 300px;
+}
+
+.cardTitle {
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.cardPrice {
+	width: 90%;
+	height: 32px;
+	text-align: center;
+	font-weight: 800;
+	line-height: 30px;
+}
