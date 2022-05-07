@@ -1,5 +1,139 @@
 import React from "react";
 
+import { openInNewTab } from "../../Helpers/openInNewTab";
+
+import { Divider } from "../Divider/Divider";
+import IconButton from "@mui/material/IconButton";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import LockIcon from "@mui/icons-material/Lock";
+import PhoneIcon from "@mui/icons-material/Phone";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import PlaceIcon from "@mui/icons-material/Place";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+
+import "./footer.css";
+
 export const Footer = () => {
-	return <div>Footer</div>;
+	return (
+		<div className='footerContainer'>
+			<div className='footerInfo'>
+				<div className='footerInfoLabels'>
+					<LocalShippingIcon
+						fontSize='large'
+						className='footerInfoLabelsIcon'
+					/>
+					<div className='footerInfoLabelsText'>
+						<p className='footerInfoLabelsTextTitle'>
+							ENVIAMOS TU COMPRA
+						</p>
+						<p className='footerInfoLabelsTextSubtitle'>
+							Entregas a todo el país
+						</p>
+					</div>
+				</div>
+				<div className='footerInfoLabels'>
+					<CreditCardIcon
+						fontSize='large'
+						className='footerInfoLabelsIcon'
+					/>
+					<div className='footerInfoLabelsText'>
+						<p className='footerInfoLabelsTextTitle'>
+							PAGÁ COMO QUIERAS
+						</p>
+						<p className='footerInfoLabelsTextSubtitle'>
+							Tarjetas de crédito o efectivo
+						</p>
+					</div>
+				</div>
+				<div className='footerInfoLabels'>
+					<LockIcon
+						fontSize='large'
+						className='footerInfoLabelsIcon'
+					/>
+					<div className='footerInfoLabelsText'>
+						<p className='footerInfoLabelsTextTitle'>
+							COMPRÁ CON SEGURIDAD
+						</p>
+						<p className='footerInfoLabelsTextSubtitle'>
+							Tus datos siempre protegidos
+						</p>
+					</div>
+				</div>
+			</div>
+			<Divider />
+			<Divider />
+			<div className='footerContact'>
+				<div className='footerContactSections'>
+					<div className='footerContactDirectTitle'>CONTACTANOS</div>
+					<div className='footerContactDirectInfo'>
+						<IconButton aria-label='phone'>
+							<PhoneIcon />
+						</IconButton>
+						<p className='footerContactDirectInfoText'>
+							2914182420
+						</p>
+					</div>
+					<div className='footerContactDirectInfo'>
+						<IconButton
+							aria-label='email'
+							onClick={() =>
+								openInNewTab("mailto:1928showroom@gmail.com")
+							}
+						>
+							<AlternateEmailIcon />
+						</IconButton>
+						<p className='footerContactDirectInfoText'>
+							1928showroom@gmail.com
+						</p>
+					</div>
+					<div className='footerContactDirectInfo'>
+						<IconButton
+							aria-label='place'
+							onClick={() =>
+								openInNewTab(
+									"https://www.google.com.ar/maps/place/1928Showroom/@-38.7014743,-62.273796,15z/data=!4m5!3m4!1s0x0:0x1faf91a144097c96!8m2!3d-38.7014743!4d-62.273796"
+								)
+							}
+						>
+							<PlaceIcon />
+						</IconButton>
+						<p className='footerContactDirectInfoText'>
+							Panama 1259
+						</p>
+					</div>
+				</div>
+				<div className='footerContactSections'>
+					<div className='footerContactSocialsTitle'>
+						REDES SOCIALES
+					</div>
+					<div className='footerContactSocialsLink'>
+						<IconButton
+							aria-label='instagram'
+							onClick={() =>
+								openInNewTab(
+									"https://www.instagram.com/1928showroom/"
+								)
+							}
+						>
+							<InstagramIcon fontSize='large' />
+						</IconButton>
+					</div>
+					<div className='footerContactSocialsLink'>
+						<IconButton
+							aria-label='facebook'
+							onClick={() =>
+								openInNewTab(
+									"https://www.facebook.com/1928showroom/"
+								)
+							}
+						>
+							<FacebookIcon fontSize='large' />
+						</IconButton>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
