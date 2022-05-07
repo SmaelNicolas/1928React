@@ -2,19 +2,12 @@ import React from "react";
 import { ItemCard } from "../ItemCard/ItemCard";
 import "./itemShowcase.css";
 
-export const ItemShowcase = () => {
+export const ItemShowcase = ({ data }) => {
 	return (
 		<div className='itemShowcaseContainer'>
-			<ItemCard />
-			<ItemCard />
-			<ItemCard />
-			<ItemCard />
-			<ItemCard />
-			<ItemCard />
-			<ItemCard />
-			<ItemCard />
-			<ItemCard />
-			<ItemCard />
+			{data.map((item) => (
+				<ItemCard item={item} key={item.id} />
+			))}
 		</div>
 	);
 };
