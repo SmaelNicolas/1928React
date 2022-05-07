@@ -6,9 +6,11 @@ import { Search } from "./Search/Search";
 import { Cart } from "./Cart/Cart";
 import { Logo } from "./Logo/Logo";
 
+import "./toolBar.css";
+
 export const ToolBar = () => {
 	return (
-		<Box sx={{ flexGrow: 2 }}>
+		<Box sx={{ flexGrow: 2 }} className='toolbarContainer'>
 			<AppBar position='static' sx={{ bgcolor: "#e3f2fd" }}>
 				<Toolbar>
 					<Search />
