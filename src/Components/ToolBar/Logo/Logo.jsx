@@ -1,6 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./logo.css";
 
 export const Logo = () => {
-	return <div className='logoName'>1928Showroom</div>;
+	return (
+		<Link className='logoName' to='/'>
+			1928Showroom
+		</Link>
+	);
 };
