@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 
 import "./navBar.css";
 import { Home } from "../../Pages/Home/Home";
+import { Contact } from "../../Pages/Contact/Contact";
 
 export const NavBar = () => {
 	const [value, setValue] = useState(0);
@@ -35,22 +36,6 @@ export const NavBar = () => {
 	};
 
 	return (
-		// <Box>
-		// 	<BottomNavigation
-		// 		showLabels
-		// 		value={value}
-		// 		onChange={(event, newValue) => {
-		// 			setValue(newValue);
-		// 		}}
-		// 	>
-		// 		<BottomNavigationAction label='Inicio' />
-		// 		<BottomNavigationAction label='Jeans' />
-		// 		<BottomNavigationAction label='Remeras' />
-		// 		<BottomNavigationAction label='Sweaters' />
-		// 		<BottomNavigationAction label='Accesorios' />
-		// 		<BottomNavigationAction label='Contacto' />
-		// 	</BottomNavigation>
-		// </Box>
 		<>
 			<Box sx={{ borderBottom: 1, borderColor: "divider" }}>
 				<Tabs
@@ -83,7 +68,7 @@ export const NavBar = () => {
 				Item 5
 			</TabPanel>
 			<TabPanel value={value} index={5}>
-				Item 6
+				<Contact />
 			</TabPanel>
 		</>
 	);
