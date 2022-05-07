@@ -1,46 +1,46 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import Button from "@mui/material/Button";
 
-export const CartContent = ({ anchor, toggleDrawer }) => {
+import CloseIcon from "@mui/icons-material/Close";
+import PriceCheckIcon from "@mui/icons-material/PriceCheck";
+
+import { ListItemInCart } from "./ListItem/ListItemInCart";
+
+import "./cartContent.css";
+
+export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 	return (
 		<Box
-			sx={{
-				width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
-			}}
+			className='cartContentContainer'
 			role='presentation'
-			onClick={toggleDrawer(anchor, false)}
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
-			<List>
-				{["Inbox", "Starred", "Send email", "Drafts"].map(
-					(text, index) => (
-						<ListItem button key={text}>
-							<ListItemIcon>
-								{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-							</ListItemIcon>
-							<ListItemText primary={text} />
-						</ListItem>
-					)
-				)}
+			<List
+				sx={{
+					width: "100%",
+				}}
+			>
+				<ListItem alignItems='flex-end'>
+					<CloseIcon
+						fontSize='large'
+						onClick={toggleDrawer(anchor, false)}
+					/>
+				</ListItem>
+				<Divider variant='inset' component='li' />
+				<ListItemInCart cart={cart} toggleDrawer={toggleDrawer} />
 			</List>
-			<Divider />
-			<List>
-				{["All mail", "Trash", "Spam"].map((text, index) => (
-					<ListItem button key={text}>
-						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-						</ListItemIcon>
-						<ListItemText primary={text} />
-					</ListItem>
-				))}
-			</List>
+			<Button
+				variant='contained'
+				className='buttonFinishCart'
+				endIcon={<PriceCheckIcon />}
+				onClick={() => console.log("TERMINAR COMPRA")}
+			>
+				IR A FINALIZAR COMPRA
+			</Button>
 		</Box>
 	);
 };
