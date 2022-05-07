@@ -35,7 +35,7 @@ export const ListItemInCart = ({ cart, toggleDrawer }) => {
 						/>
 						<Chip
 							icon={<AttachMoneyIcon />}
-							label={item.price}
+							label={item.price * item.quantity}
 							variant='outlined'
 							size='small'
 						/>
