@@ -3,15 +3,12 @@ import { ButtonMore } from "../../Components/ButtonMore/ButtonMore";
 import { Divider } from "../../Components/Divider/Divider";
 import { ItemShowcase } from "../../Components/ItemShowcase/ItemShowcase";
 import dataDummy from "../../Data/dummyData";
-import { SwiperHome } from "../../Components/SwiperHome/SwiperHome";
-import "./home.css";
 
-export const Home = () => {
+export const Remeras = () => {
 	const [data] = useState(dataDummy);
 
 	return (
-		<div className='homeContainer'>
-			<SwiperHome />
+		<div className='remerasContainer'>
 			<Divider />
 			<Divider />
 			<ItemShowcase data={data} />
