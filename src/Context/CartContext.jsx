@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext();
 
@@ -43,6 +44,13 @@ export const CartProvider = (props) => {
 		} else {
 			setCart([...cart, item]);
 		}
+		Swal.fire({
+			position: "top-end",
+			icon: "success",
+			title: `${item.title} Agregado!`,
+			showConfirmButton: false,
+			timer: 800,
+		});
 		handleAdd();
 	}
 
@@ -54,6 +62,13 @@ export const CartProvider = (props) => {
 		} else {
 			setCart(cart.filter((it) => it.id !== item.id));
 		}
+		Swal.fire({
+			position: "top-start",
+			icon: "success",
+			title: `${item.title} Eliminado!`,
+			showConfirmButton: false,
+			timer: 800,
+		});
 		handleAdd();
 	};
 
