@@ -8,6 +8,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Drawer from "@mui/material/Drawer";
 import { CartContent } from "./CartContent/CartContent";
 import { CartContext } from "../../../Context/CartContext";
+import "./cart.css";
 
 export const Cart = () => {
 	const { addedToCart, quantityItems, getAllItemsFromCart } =
@@ -39,6 +40,7 @@ export const Cart = () => {
 	useEffect(() => {
 		setCart(getAllItemsFromCart());
 		setCantItems(quantityItems());
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [addedToCart]);
 
 	return (
@@ -48,7 +50,10 @@ export const Cart = () => {
 					onClick={toggleDrawer("right", true)}
 					aria-label='cart'
 				>
-					<StyledBadge badgeContent={cantItem} color='primary'>
+					<StyledBadge
+						badgeContent={cantItem > 0 ? cantItem : "0"}
+						color='primary'
+					>
 						<ShoppingCartIcon />
 					</StyledBadge>
 				</IconButton>
