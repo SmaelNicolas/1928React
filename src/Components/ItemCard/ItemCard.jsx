@@ -1,19 +1,32 @@
+import React, { useContext } from "react";
 import { Paper } from "@mui/material";
-import React from "react";
+import Button from "@mui/material/Button";
+import { Divider } from "../Divider/Divider";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { CartContext } from "../../Context/CartContext";
+
 import "./itemCard.css";
 
-export const ItemCard = () => {
+export const ItemCard = ({ item }) => {
+	const { addItemToCart } = useContext(CartContext);
+
 	return (
-		<div className='card'>
+		<div className='card' key={item.id}>
 			<Paper elevation={6}>
 				<div className='cardContainer'>
-					<img
-						className='cardImg'
-						src='https://d3ugyf2ht6aenh.cloudfront.net/stores/001/141/936/products/d5ac0e9b-699f-442e-bde3-49a38312b2ee-a9723da1bacd0e0b6516480452162455-320-0.jpeg'
-						alt=''
-					/>
-					<div className='cardTitle'> blazer mahal</div>
-					<div className='cardPrice'> $ 14.835 </div>
+					<img className='cardImg' src={item.img} alt='' />
+					<div className='cardTitle'>{item.title}</div>
+					<div className='cardPrice'> {item.price} </div>
+					<Divider />
+					<Button
+						variant='contained'
+						size='small'
+						endIcon={<AddShoppingCartIcon />}
+						onClick={() => addItemToCart(item)}
+					>
+						Agregar al carrito
+					</Button>
+					<Divider />
 				</div>
 			</Paper>
 		</div>
