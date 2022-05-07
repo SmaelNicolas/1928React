@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
@@ -7,9 +7,14 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 // ----------------------
 import Drawer from "@mui/material/Drawer";
 import { CartContent } from "./CartContent/CartContent";
+import { CartContext } from "../../../Context/CartContext";
 
 export const Cart = () => {
+	const { addedToCart, quantityItems, getAllItemsFromCart } =
+		useContext(CartContext);
 	const [open, setOpen] = useState(false);
+	const [cart, setCart] = useState(getAllItemsFromCart());
+	const [cantItem, setCantItems] = useState(quantityItems());
 
 	const toggleDrawer = (anchor, value) => (event) => {
 		if (
@@ -31,6 +36,11 @@ export const Cart = () => {
 		},
 	}));
 
+	useEffect(() => {
+		setCart(getAllItemsFromCart());
+		setCantItems(quantityItems());
+	}, [addedToCart]);
+
 	return (
 		<div>
 			<React.Fragment key={"right"}>
@@ -38,7 +48,7 @@ export const Cart = () => {
 					onClick={toggleDrawer("right", true)}
 					aria-label='cart'
 				>
-					<StyledBadge badgeContent={4} color='primary'>
+					<StyledBadge badgeContent={cantItem} color='primary'>
 						<ShoppingCartIcon />
 					</StyledBadge>
 				</IconButton>
@@ -47,7 +57,11 @@ export const Cart = () => {
 					open={open["right"]}
 					onClose={toggleDrawer("right", false)}
 				>
-					<CartContent anchor={"right"} toggleDrawer={toggleDrawer} />
+					<CartContent
+						anchor={"right"}
+						toggleDrawer={toggleDrawer}
+						cart={cart}
+					/>
 				</Drawer>
 			</React.Fragment>
 		</div>
