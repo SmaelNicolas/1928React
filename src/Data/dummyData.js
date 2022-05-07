@@ -1,7 +1,7 @@
 const dataDummy = [
 	{
 		id: 1,
-		title: "PRODCUTO",
+		title: "Producto 1",
 		price: 1592,
 		quantity: 1,
 		type: "jean",
@@ -9,7 +9,7 @@ const dataDummy = [
 	},
 	{
 		id: 2,
-		title: "PRODCUTO2",
+		title: "Producto 2",
 		price: 1600,
 		quantity: 1,
 		type: "jean",
@@ -17,7 +17,7 @@ const dataDummy = [
 	},
 	{
 		id: 3,
-		title: "PRODCUTO3",
+		title: "Producto 3",
 		price: 1650,
 		quantity: 1,
 		type: "jean",
@@ -25,7 +25,7 @@ const dataDummy = [
 	},
 	{
 		id: 4,
-		title: "PRODCUTO4",
+		title: "Producto 4",
 		price: 1666,
 		quantity: 1,
 		type: "jean",
@@ -33,7 +33,7 @@ const dataDummy = [
 	},
 	{
 		id: 5,
-		title: "PRODCUTO5",
+		title: "Producto 5",
 		price: 1750,
 		quantity: 1,
 		type: "jean",
@@ -41,7 +41,7 @@ const dataDummy = [
 	},
 	{
 		id: 6,
-		title: "PRODCUTO6",
+		title: "Producto 6",
 		price: 16850,
 		quantity: 1,
 		type: "jean",
