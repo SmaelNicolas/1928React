@@ -7,6 +7,10 @@ import Typography from "@mui/material/Typography";
 
 import "./navBar.css";
 import { Home } from "../../Pages/Home/Home";
+import { Jeans } from "../../Pages/Jeans/Jeans";
+import { Remeras } from "../../Pages/Remeras/Remeras";
+import { Sweaters } from "../../Pages/Sweaters/Sweaters";
+import { Accesorios } from "../../Pages/Accesorios/Accesorios";
 import { Contact } from "../../Pages/Contact/Contact";
 
 export const NavBar = () => {
@@ -56,16 +60,16 @@ export const NavBar = () => {
 				<Home />
 			</TabPanel>
 			<TabPanel value={value} index={1}>
-				Item Two
+				<Jeans />
 			</TabPanel>
 			<TabPanel value={value} index={2}>
-				Item Three
+				<Remeras />
 			</TabPanel>
 			<TabPanel value={value} index={3}>
-				Item 4
+				<Sweaters />
 			</TabPanel>
 			<TabPanel value={value} index={4}>
-				Item 5
+				<Accesorios />
 			</TabPanel>
 			<TabPanel value={value} index={5}>
 				<Contact />
