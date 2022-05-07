@@ -1,1 +1,20 @@
+.stackContact {
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.stackContactChip {
+	margin-top: 15px !important;
+}
 
+@media only screen and (max-width: 500px) {
+	.stackContact {
+		width: max-content;
+		align-items: flex-start;
+		flex-direction: column !important;
+	}
+	.stackContactChip {
+		margin-left: 0 !important;
+	}
+}
