@@ -5,6 +5,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	background-color: rgba(128, 128, 128, 0.35);
 }
 
 .footerInfo {
@@ -53,9 +54,10 @@
 	flex-direction: column;
 }
 
-.footerContactDirectTitle {
+.footerContactTitles {
 	padding-bottom: 5px;
 	padding-left: 10px;
+	font-weight: 600;
 }
 
 .footerContactDirectInfo {
@@ -70,9 +72,4 @@
 	font-weight: 400;
 	font-size: 15px;
 	line-height: 35px;
-}
-
-.footerContactSocialsTitle {
-	padding-bottom: 5px;
-	padding-left: 10px;
 }

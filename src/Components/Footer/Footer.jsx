@@ -6,7 +6,7 @@ import { Divider } from "../Divider/Divider";
 import IconButton from "@mui/material/IconButton";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
-import LockIcon from "@mui/icons-material/Lock";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import PhoneIcon from "@mui/icons-material/Phone";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import PlaceIcon from "@mui/icons-material/Place";
@@ -26,10 +26,10 @@ export const Footer = () => {
 					/>
 					<div className='footerInfoLabelsText'>
 						<p className='footerInfoLabelsTextTitle'>
-							ENVIAMOS TU COMPRA
+							COMPRA Y RELAJATE
 						</p>
 						<p className='footerInfoLabelsTextSubtitle'>
-							Entregas a todo el país
+							Envíos a todo el país
 						</p>
 					</div>
 				</div>
@@ -40,24 +40,24 @@ export const Footer = () => {
 					/>
 					<div className='footerInfoLabelsText'>
 						<p className='footerInfoLabelsTextTitle'>
-							PAGÁ COMO QUIERAS
+							PAGÁ COMO MAS TE GUSTE
 						</p>
 						<p className='footerInfoLabelsTextSubtitle'>
-							Tarjetas de crédito o efectivo
+							Tarjetas , Efectivo , QR , Link , Transferencias
 						</p>
 					</div>
 				</div>
 				<div className='footerInfoLabels'>
-					<LockIcon
+					<HelpOutlineIcon
 						fontSize='large'
 						className='footerInfoLabelsIcon'
 					/>
 					<div className='footerInfoLabelsText'>
 						<p className='footerInfoLabelsTextTitle'>
-							COMPRÁ CON SEGURIDAD
+							TENES DUDAS DE TU TALLE
 						</p>
 						<p className='footerInfoLabelsTextSubtitle'>
-							Tus datos siempre protegidos
+							Contactános por cualquier medio y te ayudamos
 						</p>
 					</div>
 				</div>
@@ -66,7 +66,7 @@ export const Footer = () => {
 			<Divider />
 			<div className='footerContact'>
 				<div className='footerContactSections'>
-					<div className='footerContactDirectTitle'>CONTACTANOS</div>
+					<div className='footerContactTitles'>CONTACTANOS</div>
 					<div className='footerContactDirectInfo'>
 						<IconButton aria-label='phone'>
 							<PhoneIcon />
@@ -100,14 +100,12 @@ export const Footer = () => {
 							<PlaceIcon />
 						</IconButton>
 						<p className='footerContactDirectInfoText'>
-							Panama 1259
+							Panama 1259 - Bahía Blanca
 						</p>
 					</div>
 				</div>
 				<div className='footerContactSections'>
-					<div className='footerContactSocialsTitle'>
-						REDES SOCIALES
-					</div>
+					<div className='footerContactTitles'>REDES SOCIALES</div>
 					<div className='footerContactSocialsLink'>
 						<IconButton
 							aria-label='instagram'
