@@ -1,0 +1,13 @@
+.cartContentContainer {
+	width: 350px;
+	flex-direction: column;
+	position: relative;
+}
+
+.MuiListItemText-primary {
+	width: 100% !important;
+}
+
+.buttonFinishCart {
+	background-color: rgba(40, 167, 40, 0.842) !important;
+}
