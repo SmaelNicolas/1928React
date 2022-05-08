@@ -1,11 +1,11 @@
 .swiper {
-	width: 1000px;
+	width: min(1000px, 95%);
 
 	height: 100%;
 }
 
 .swiper-slide {
-	height: 500px;
+	height: auto;
 	text-align: center;
 	font-size: 18px;
 	background: #fff;
