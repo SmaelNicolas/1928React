@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
@@ -11,8 +11,13 @@ import PriceCheckIcon from "@mui/icons-material/PriceCheck";
 import { ListItemInCart } from "./ListItem/ListItemInCart";
 
 import "./cartContent.css";
+import { CartContext } from "../../../../Context/CartContext";
 
 export const CartContent = ({ anchor, toggleDrawer, cart }) => {
+	const { quantityItems } = useContext(CartContext);
+
+	const [items] = useState(quantityItems());
+
 	return (
 		<Box
 			className='cartContentContainer'
@@ -37,6 +42,7 @@ export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 				variant='contained'
 				className='buttonFinishCart'
 				endIcon={<PriceCheckIcon />}
+				disabled={items === 0}
 				onClick={() => console.log("TERMINAR COMPRA")}
 			>
 				IR A FINALIZAR COMPRA
