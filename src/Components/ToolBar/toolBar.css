@@ -3,3 +3,9 @@
 	top: 0px;
 	z-index: 1000;
 }
+
+@media only screen and (max-width: 635px) {
+	.toolbarAppBar {
+		padding-left: 50px;
+	}
+}

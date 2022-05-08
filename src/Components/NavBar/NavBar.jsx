@@ -59,18 +59,18 @@ export const NavBar = () => {
 		setShowMenu(!showMenu);
 	};
 
+	const clickSection = () => {
+		handleClickMenu();
+		window.scrollTo(0, 0);
+	};
+
 	return (
 		<>
-			<AppBar className='appBarResponsive'>
-				<Toolbar>
-					<StyledFab
-						aria-label='menu'
-						onClick={() => handleClickMenu()}
-					>
-						<MenuIcon />
-					</StyledFab>
-				</Toolbar>
-			</AppBar>
+			<MenuIcon
+				onClick={() => handleClickMenu()}
+				className='menuIcon'
+				fontSize='large'
+			/>
 			<Box
 				sx={{ borderBottom: 1, borderColor: "divider" }}
 				className='tabsBar'
@@ -97,24 +97,15 @@ export const NavBar = () => {
 						aria-label='basic tabs example'
 						className='tabsListComponent'
 					>
-						<Tab label='Inicio' onClick={() => handleClickMenu()} />
-						<Tab label='Jeans' onClick={() => handleClickMenu()} />
-						<Tab
-							label='Remeras'
-							onClick={() => handleClickMenu()}
-						/>
-						<Tab
-							label='Sweaters'
-							onClick={() => handleClickMenu()}
-						/>
+						<Tab label='Inicio' onClick={() => clickSection()} />
+						<Tab label='Jeans' onClick={() => clickSection()} />
+						<Tab label='Remeras' onClick={() => clickSection()} />
+						<Tab label='Sweaters' onClick={() => clickSection()} />
 						<Tab
 							label='Accesorios'
-							onClick={() => handleClickMenu()}
+							onClick={() => clickSection()}
 						/>
-						<Tab
-							label='Contacto'
-							onClick={() => handleClickMenu()}
-						/>
+						<Tab label='Contacto' onClick={() => clickSection()} />
 					</Tabs>
 				)}
 			</Box>

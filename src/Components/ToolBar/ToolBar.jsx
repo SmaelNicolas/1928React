@@ -11,7 +11,11 @@ import "./toolBar.css";
 export const ToolBar = () => {
 	return (
 		<Box sx={{ flexGrow: 2 }} className='toolbarContainer'>
-			<AppBar position='static' sx={{ bgcolor: "#e3f2fd" }}>
+			<AppBar
+				position='static'
+				sx={{ bgcolor: "#e3f2fd" }}
+				className='toolbarAppBar'
+			>
 				<Toolbar>
 					<Search />
 					<Box sx={{ flexGrow: 1 }} />

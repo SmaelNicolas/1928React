@@ -31,8 +31,18 @@
 .appBarResponsive {
 	display: none !important;
 }
+.menuIcon {
+	display: none !important;
+}
 
 @media only screen and (max-width: 635px) {
+	.menuIcon {
+		display: flex !important;
+		position: fixed;
+		top: 10px;
+		left: 10px;
+		z-index: 1000;
+	}
 	.tabsContainer {
 		display: none !important;
 	}
@@ -50,14 +60,12 @@
 	}
 
 	.tabsListComponent {
-		position: fixed;
-		bottom: -400px;
-		background-color: white;
 		width: 100%;
-		left: 0px;
-		padding-bottom: 40px;
+		height: 100%;
+		position: fixed;
+		background-color: white;
 		z-index: 999;
-		animation: fadeInBottom 0.5s linear forwards;
+		animation: fadeInBottom 0.1s linear forwards;
 	}
 
 	.MuiTabs-flexContainer {
@@ -74,9 +82,9 @@
 
 @keyframes fadeInBottom {
 	from {
-		bottom: -100px;
+		top: -200px;
 	}
 	to {
-		bottom: 55px;
+		top: 55px;
 	}
 }
