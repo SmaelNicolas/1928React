@@ -1,5 +1,5 @@
 .contactForm {
-	width: 360px;
+	width: min(360px, 100%);
 }
 
 .MuiStepIcon-root {
@@ -20,5 +20,9 @@
 }
 
 .messageContainer {
-	width: 320px;
+	width: 100%;
+}
+
+.MuiStepper-root {
+	width: 100%;
 }
