@@ -15,6 +15,7 @@ function App() {
 				<Routes>
 					<Route exact path='/' element={<NavBar />} />
 					{/* <Route path='order' element={<About />} /> */}
+					<Route path='*' element={<NavBar />} />
 				</Routes>
 				<Footer />
 			</div>
