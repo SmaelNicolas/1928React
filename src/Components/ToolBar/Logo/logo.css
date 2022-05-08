@@ -1,6 +1,13 @@
 .logoName {
+	display: flex;
 	color: black;
 	width: 350px;
 	text-align: start;
 	text-transform: uppercase;
+}
+
+@media only screen and (max-width: 635px) {
+	.logoName {
+		display: none;
+	}
 }
