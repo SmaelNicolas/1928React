@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { Toast } from "../Helpers/toast";
 import Swal from "sweetalert2";
 
 export const CartContext = createContext();
@@ -44,12 +45,9 @@ export const CartProvider = (props) => {
 		} else {
 			setCart([...cart, item]);
 		}
-		Swal.fire({
-			position: "top-end",
+		Toast.fire({
 			icon: "success",
-			title: `${item.title} Agregado!`,
-			showConfirmButton: false,
-			timer: 800,
+			title: `${item.title} agregado!`,
 		});
 		handleAdd();
 	}
