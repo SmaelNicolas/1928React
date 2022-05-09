@@ -10,13 +10,21 @@ import PriceCheckIcon from "@mui/icons-material/PriceCheck";
 
 import { ListItemInCart } from "./ListItem/ListItemInCart";
 
-import "./cartContent.css";
 import { CartContext } from "../../../../Context/CartContext";
+import { useNavigate } from "react-router-dom";
+
+import "./cartContent.css";
 
 export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 	const { quantityItems } = useContext(CartContext);
 
 	const [items] = useState(quantityItems());
+	const navigate = useNavigate();
+
+	const handleClickFinish = () => {
+		navigate("order");
+		window.scrollTo(0, 0);
+	};
 
 	return (
 		<Box
@@ -29,7 +37,7 @@ export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 					width: "100%",
 				}}
 			>
-				<ListItem alignItems='flex-end'>
+				<ListItem className='listItemCartContant'>
 					<CloseIcon
 						fontSize='large'
 						onClick={toggleDrawer(anchor, false)}
@@ -43,7 +51,7 @@ export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 				className='buttonFinishCart'
 				endIcon={<PriceCheckIcon />}
 				disabled={items === 0}
-				onClick={() => console.log("TERMINAR COMPRA")}
+				onClick={() => handleClickFinish()}
 			>
 				IR A FINALIZAR COMPRA
 			</Button>
