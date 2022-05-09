@@ -27,6 +27,7 @@ export const CartProvider = (props) => {
 
 	const emptyCart = () => {
 		setCart([]);
+		handleAdd();
 	};
 
 	const getItemFromCart = (id) => {
