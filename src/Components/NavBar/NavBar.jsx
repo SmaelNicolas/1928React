@@ -11,12 +11,7 @@ import { Remeras } from "../../Pages/Remeras/Remeras";
 import { Sweaters } from "../../Pages/Sweaters/Sweaters";
 import { Accesorios } from "../../Pages/Accesorios/Accesorios";
 import { Contact } from "../../Pages/Contact/Contact";
-
-import { styled } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import MenuIcon from "@mui/icons-material/Menu";
-import Fab from "@mui/material/Fab";
 
 import "./navBar.css";
 
@@ -46,14 +41,6 @@ export const NavBar = () => {
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
 	};
-	const StyledFab = styled(Fab)({
-		position: "absolute",
-		zIndex: 1,
-		top: -30,
-		left: 0,
-		right: 0,
-		margin: "0 auto",
-	});
 
 	const handleClickMenu = () => {
 		setShowMenu(!showMenu);
@@ -110,19 +97,19 @@ export const NavBar = () => {
 				)}
 			</Box>
 			<TabPanel value={value} index={0}>
-				<Home />
+				<Home value={"destacado"} />
 			</TabPanel>
 			<TabPanel value={value} index={1}>
-				<Jeans />
+				<Jeans value={"jean"} />
 			</TabPanel>
 			<TabPanel value={value} index={2}>
-				<Remeras />
+				<Remeras value={"remera"} />
 			</TabPanel>
 			<TabPanel value={value} index={3}>
-				<Sweaters />
+				<Sweaters value={"sweater"} />
 			</TabPanel>
 			<TabPanel value={value} index={4}>
-				<Accesorios />
+				<Accesorios value={"accesorio"} />
 			</TabPanel>
 			<TabPanel value={value} index={5}>
 				<Contact />
