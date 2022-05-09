@@ -11,3 +11,7 @@
 .buttonFinishCart {
 	background-color: rgba(40, 167, 40, 0.842) !important;
 }
+
+.listItemCartContant {
+	align-items: flex-end !important;
+}
