@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { ButtonMore } from "../../Components/ButtonMore/ButtonMore";
 import { Divider } from "../../Components/Divider/Divider";
 import { ItemShowcase } from "../../Components/ItemShowcase/ItemShowcase";
-import dataDummy from "../../Data/dummyData";
 
-export const Remeras = () => {
-	const [data] = useState(dataDummy);
-
+export const Remeras = ({ value }) => {
 	return (
 		<div className='remerasContainer'>
 			<Divider />
 			<Divider />
-			<ItemShowcase data={data} />
+			<ItemShowcase value={value} />
 			<Divider />
 			<Divider />
 			<ButtonMore />

@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { ButtonMore } from "../../Components/ButtonMore/ButtonMore";
 import { Divider } from "../../Components/Divider/Divider";
 import { ItemShowcase } from "../../Components/ItemShowcase/ItemShowcase";
-import dataDummy from "../../Data/dummyData";
 
-export const Sweaters = () => {
-	const [data] = useState(dataDummy);
-
+export const Sweaters = ({ value }) => {
 	return (
 		<div className='sweatersContainer'>
 			<Divider />
 			<Divider />
-			<ItemShowcase data={data} />
+			<ItemShowcase value={value} />
 			<Divider />
 			<Divider />
 			<ButtonMore />
