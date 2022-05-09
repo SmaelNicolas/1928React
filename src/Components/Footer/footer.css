@@ -76,9 +76,6 @@
 }
 
 @media only screen and (max-width: 635px) {
-	.footerContainer {
-		padding-bottom: 100px;
-	}
 	.footerContactSections {
 		margin-bottom: 20px;
 	}
