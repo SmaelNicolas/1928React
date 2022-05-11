@@ -11,7 +11,7 @@ export const Sweaters = ({ value }) => {
 			<ItemShowcase value={value} />
 			<Divider />
 			<Divider />
-			<ButtonMore />
+			<ButtonMore title={"Ver todos los productos"} path='productos' />
 			<Divider />
 			<Divider />
 		</div>

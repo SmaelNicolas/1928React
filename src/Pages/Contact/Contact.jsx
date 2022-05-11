@@ -13,7 +13,6 @@ export const Contact = () => {
 			<Divider />
 			<Divider />
 			<ContactForm />
-			<Divider />
 		</div>
 	);
 };
