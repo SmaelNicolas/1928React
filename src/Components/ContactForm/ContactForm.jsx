@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import SendIcon from "@mui/icons-material/Send";
 import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 
 import "./contactForm.css";
 
@@ -30,11 +31,25 @@ export const ContactForm = () => {
 				"6Gf8i5hRdd3vUZJI8"
 			)
 			.then(
-				(result) => {
-					//TODO FIRE SWEET ALERT
+				() => {
+					Swal.fire({
+						title: "Mensaje Enviado 💌",
+						text: `Gracias ${name} , en breve te contactaremos!`,
+						imageUrl: "https://i.ibb.co/58rbvCQ/Logo.jpg",
+						imageWidth: 200,
+						imageHeight: 200,
+						imageAlt: "logo",
+					});
 				},
-				(error) => {
-					//TODO FIRE SWEET ALERT
+				() => {
+					Swal.fire({
+						title: "Error en el mensaje",
+						text: `Algo salio mal, por favor intenta denuevo`,
+						imageUrl: "https://i.ibb.co/58rbvCQ/Logo.jpg",
+						imageWidth: 200,
+						imageHeight: 200,
+						imageAlt: "logo",
+					});
 				}
 			);
 	};
