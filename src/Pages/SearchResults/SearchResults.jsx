@@ -40,16 +40,12 @@ export const SearchResults = () => {
 					<Divider />
 					{exist ? (
 						<div className='itemShowcaseContainer'>
-							{products.map((item) =>
-								item.map((prod) =>
-									prod !== undefined ? (
-										<ItemCard item={prod} key={prod.id} />
-									) : undefined
-								)
-							)}
+							{products.map((item) => (
+								<ItemCard item={item} key={item.id} />
+							))}
 						</div>
 					) : (
-						<div>VACIO</div>
+						<div>PROXIMAMENTE!</div>
 					)}
 					<Divider />
 					<Divider />
