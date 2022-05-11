@@ -117,6 +117,11 @@ export const ContactForm = () => {
 										onClick={handleNext}
 										sx={{ mt: 1, mr: 1 }}
 										disabled={disabledFirst()}
+										className={
+											disabledFirst()
+												? "buttonFinishCartRed"
+												: " buttonFinishCart"
+										}
 									>
 										Continuar
 									</Button>
@@ -145,6 +150,11 @@ export const ContactForm = () => {
 										onClick={handleNext}
 										sx={{ mt: 1, mr: 1 }}
 										disabled={disabledSecond()}
+										className={
+											disabledSecond()
+												? "buttonFinishCartRed"
+												: " buttonFinishCart"
+										}
 									>
 										Continuar
 									</Button>
@@ -191,6 +201,7 @@ export const ContactForm = () => {
 										sx={{ mt: 1, mr: 1 }}
 										type='submit'
 										onClick={handleNext}
+										className=' buttonFinishCart'
 									>
 										Enviar
 									</Button>

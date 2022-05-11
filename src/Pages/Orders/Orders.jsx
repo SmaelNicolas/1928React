@@ -123,7 +123,7 @@ export const Orders = () => {
 			{empty ? (
 				<OrderWithEmptyCart />
 			) : (
-				<div className='ordersContainer'>
+				<div className='sectionContainer'>
 					<form
 						ref={form}
 						onSubmit={sendEmail}
@@ -225,6 +225,11 @@ export const Orders = () => {
 													onClick={handleNext}
 													sx={{ mt: 1, mr: 1 }}
 													disabled={disabledFirst()}
+													className={
+														disabledFirst()
+															? "buttonFinishCartRed"
+															: " buttonFinishCart"
+													}
 												>
 													Continuar
 												</Button>
@@ -272,6 +277,11 @@ export const Orders = () => {
 													onClick={handleNext}
 													sx={{ mt: 1, mr: 1 }}
 													disabled={disabledSecond()}
+													className={
+														disabledSecond()
+															? "buttonFinishCartRed"
+															: " buttonFinishCart"
+													}
 												>
 													Continuar
 												</Button>
@@ -336,6 +346,11 @@ export const Orders = () => {
 													onClick={handleNext}
 													sx={{ mt: 1, mr: 1 }}
 													disabled={disabledThird()}
+													className={
+														disabledThird()
+															? "buttonFinishCartRed"
+															: " buttonFinishCart"
+													}
 												>
 													Continuar
 												</Button>
@@ -393,8 +408,15 @@ export const Orders = () => {
 													onClick={handleNext}
 													sx={{ mt: 1, mr: 1 }}
 													disabled={disabledFirst()}
+													className=' buttonFinishCart'
 												>
 													Continuar
+												</Button>
+												<Button
+													onClick={handleBack}
+													sx={{ mt: 1, mr: 1 }}
+												>
+													Atras
 												</Button>
 											</div>
 										</Box>
@@ -488,6 +510,7 @@ export const Orders = () => {
 													sx={{ mt: 1, mr: 1 }}
 													type='submit'
 													onClick={handleNext}
+													className=' buttonFinishCart'
 												>
 													Enviar
 												</Button>
