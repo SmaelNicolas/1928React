@@ -22,6 +22,7 @@ export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 	const navigate = useNavigate();
 
 	const handleClickFinish = () => {
+		toggleDrawer(anchor, false);
 		navigate("order");
 		window.scrollTo(0, 0);
 	};
