@@ -7,7 +7,7 @@
 }
 
 .homeTitle {
-	font-size: 60px;
+	font-size: calc(40px + 1vw);
 	font-weight: 800;
 	letter-spacing: 0.9px;
 	color: white;
