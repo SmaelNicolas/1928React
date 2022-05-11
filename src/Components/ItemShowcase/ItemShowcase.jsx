@@ -18,15 +18,15 @@ export const ItemShowcase = ({ value }) => {
 		<div className='itemShowcaseContainer'>
 			{products.map((item) => {
 				if (value === "") {
-					return <ItemCard item={item} key={item} />;
+					return <ItemCard item={item} key={item.id} />;
 				} else {
 					if (value === "destacado") {
 						return item.outstanding === true ? (
-							<ItemCard item={item} key={item} />
+							<ItemCard item={item} key={item.id} />
 						) : undefined;
 					} else {
 						return item.type === value ? (
-							<ItemCard item={item} key={item} />
+							<ItemCard item={item} key={item.id} />
 						) : undefined;
 					}
 				}
