@@ -4,15 +4,22 @@
 	justify-content: flex-start;
 	align-items: center;
 	color: black;
-	width: 500px;
+	width: 450px;
 	text-align: start;
 	text-transform: uppercase;
 	text-decoration: none;
 }
 
 .logoImg {
+	width: 150px;
+	height: auto;
+	display: flex;
+}
+
+.logoImgResponsive {
 	width: 40px;
 	height: auto;
+	display: none;
 }
 
 .logoText {
@@ -24,6 +31,15 @@
 	.logoName {
 		width: 100px;
 	}
+
+	.logoImg {
+		display: none;
+	}
+
+	.logoImgResponsive {
+		display: flex;
+	}
+
 	.logoText {
 		display: none;
 	}
