@@ -1,4 +1,4 @@
-.searchContainer {
+.ordersContainerEmpty {
 	width: 100%;
 	min-height: 100vh;
 	display: flex;
@@ -6,19 +6,12 @@
 	justify-content: flex-start;
 	align-items: center;
 }
-
-.notFound {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-.notFoundImg {
+.emptyOrderImg {
 	width: 200px;
 }
 
-.notFoundMsg {
+.ordersEmptyText {
 	font-size: 25px;
-	font-weight: 800;
+	font-weight: 500;
 	letter-spacing: 0.9px;
 }
