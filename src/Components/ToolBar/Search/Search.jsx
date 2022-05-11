@@ -58,6 +58,7 @@ export const Search = () => {
 				onKeyDown={(e) => {
 					if (e.key === "Enter") {
 						navigate(`search/${e.target.value}`);
+						window.scrollTo(0, 0);
 					}
 				}}
 			/>
