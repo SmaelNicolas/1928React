@@ -12,10 +12,12 @@
 
 .logoImg {
 	width: 40px;
+	height: auto;
 }
 
 .logoText {
 	padding: 0px 10px;
+	letter-spacing: 1px;
 }
 
 @media only screen and (max-width: 635px) {
