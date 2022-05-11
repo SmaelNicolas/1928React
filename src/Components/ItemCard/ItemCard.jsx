@@ -14,7 +14,13 @@ export const ItemCard = ({ item, hide }) => {
 		<div className='card'>
 			<Paper elevation={6}>
 				<div className='cardContainer'>
-					<img className='cardImg' src={item.img} alt='' />
+					<img
+						className='cardImg'
+						src={item.img}
+						alt='img producto'
+						title='producto'
+						loading='lazy'
+					/>
 					<div className='cardTitle'>{item.title}</div>
 					<div className='cardPrice'>$ {item.price} </div>
 					<Divider />

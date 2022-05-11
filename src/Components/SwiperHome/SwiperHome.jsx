@@ -33,7 +33,11 @@ export const SwiperHome = () => {
 		>
 			{data.map((photo) => (
 				<SwiperSlide key={photo.id}>
-					<img src={photo.img} alt='' />
+					<img
+						src={photo.img}
+						alt='slider product'
+						title='swiper image'
+					/>
 				</SwiperSlide>
 			))}
 		</Swiper>
