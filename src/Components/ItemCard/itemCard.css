@@ -1,12 +1,12 @@
 .card {
 	width: 250px;
-	height: 400px;
+	height: auto;
 	margin: 10px;
 }
 
 .cardContainer {
 	width: 250px;
-	height: 400px;
+	height: 420px;
 
 	display: flex;
 	flex-direction: column;

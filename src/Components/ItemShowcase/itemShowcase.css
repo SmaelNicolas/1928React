@@ -1,5 +1,6 @@
 .itemShowcaseContainer {
 	width: 80%;
+	min-height: 400px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

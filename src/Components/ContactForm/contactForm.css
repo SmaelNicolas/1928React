@@ -1,5 +1,7 @@
 .contactForm {
 	width: min(360px, 100%);
+	height: auto;
+	padding-bottom: 40px;
 }
 
 .MuiStepIcon-root {
