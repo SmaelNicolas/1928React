@@ -55,7 +55,6 @@ export const Search = () => {
 				placeholder='Buscar...'
 				inputProps={{ "aria-label": "search" }}
 				sx={{ color: "black" }}
-				onFocus={(e) => console.log(e.target.value)}
 				onKeyDown={(e) => {
 					if (e.key === "Enter") {
 						navigate(`search/${e.target.value}`);

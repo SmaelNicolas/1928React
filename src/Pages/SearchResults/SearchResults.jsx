@@ -41,9 +41,11 @@ export const SearchResults = () => {
 					{exist ? (
 						<div className='itemShowcaseContainer'>
 							{products.map((item) =>
-								item !== undefined ? (
-									<ItemCard item={item} key={item.id} />
-								) : undefined
+								item.map((prod) =>
+									prod !== undefined ? (
+										<ItemCard item={prod} key={prod.id} />
+									) : undefined
+								)
 							)}
 						</div>
 					) : (
