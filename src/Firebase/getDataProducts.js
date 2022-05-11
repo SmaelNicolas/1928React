@@ -10,8 +10,6 @@ async function getProducts(setProducts, setLoader) {
 			...prod.data(),
 		}))
 	);
-	setTimeout(() => {
-		setLoader(false);
-	}, 1500);
+	setLoader(false);
 }
 export default getProducts;

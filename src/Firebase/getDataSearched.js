@@ -30,8 +30,6 @@ async function getProductsSearched(setProducts, setLoader, query, setExist) {
 	//si hay un elemento existe un resultado para renderizar
 	uniqueProductsArray.length > 0 ? setExist(true) : setExist(false);
 
-	setTimeout(() => {
-		setLoader(false);
-	}, 1500);
+	setLoader(false);
 }
 export default getProductsSearched;
