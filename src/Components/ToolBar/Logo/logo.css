@@ -1,13 +1,28 @@
 .logoName {
 	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
 	color: black;
-	width: 350px;
+	width: 500px;
 	text-align: start;
 	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.logoImg {
+	width: 40px;
+}
+
+.logoText {
+	padding: 0px 10px;
 }
 
 @media only screen and (max-width: 635px) {
 	.logoName {
+		width: 100px;
+	}
+	.logoText {
 		display: none;
 	}
 }
