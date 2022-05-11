@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-
 import MenuIcon from "@mui/icons-material/Menu";
 
-import "./navBar.css";
 import { useNavigate } from "react-router-dom";
+
+import { Divider } from "../Divider/Divider";
+
+import "./navBar.css";
 
 export const NavBar = () => {
 	const [value, setValue] = useState(0);
@@ -99,6 +100,7 @@ export const NavBar = () => {
 					</Tabs>
 				)}
 			</Box>
+			<Divider />
 		</>
 	);
 };
