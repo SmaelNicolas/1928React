@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -17,6 +17,8 @@ import "./orders.css";
 import { CartContext } from "../../Context/CartContext";
 import { ItemCard } from "../../Components/ItemCard/ItemCard";
 import { useNavigate } from "react-router-dom";
+import { OrderWithEmptyCart } from "../../Components/ErrorsMessages/OrderWithEmptyCart";
+import Swal from "sweetalert2";
 
 export const Orders = () => {
 	const { cart, totalPrice, quantityItems, emptyCart } =
@@ -29,10 +31,16 @@ export const Orders = () => {
 	const [adress, setAdress] = useState("");
 	const [city, setCity] = useState("");
 	const [envio, setEnvio] = useState("");
+	const [cupon, setCupon] = useState("");
+	const [msg, setMsg] = useState("");
 	const [cashOut, setCashOut] = useState("");
 	const [activeStep, setActiveStep] = useState(0);
-
+	const [empty, setEmpty] = useState();
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		quantityItems() > 0 ? setEmpty(false) : setEmpty(true);
+	}, []);
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -45,13 +53,38 @@ export const Orders = () => {
 				"6Gf8i5hRdd3vUZJI8"
 			)
 			.then(
-				(result) => {
-					emptyCart();
-					navigate("/");
-					//TODO FIRE SWEET ALERT
+				() => {
+					let timerInterval;
+					Swal.fire({
+						title: " Gracias por tu Compra ",
+						html: "En breve nos comunicaremos con vos!",
+						timer: 4000,
+						timerProgressBar: true,
+						didOpen: () => {
+							Swal.showLoading();
+						},
+						willClose: () => {
+							clearInterval(timerInterval);
+						},
+					}).then(() => {
+						emptyCart();
+						navigate("/");
+					});
 				},
-				(error) => {
-					//TODO FIRE SWEET ALERT
+				() => {
+					let timerInterval;
+					Swal.fire({
+						title: "Hubo un error",
+						html: "Por favor intenta nuevamente",
+						timer: 4000,
+						timerProgressBar: true,
+						didOpen: () => {
+							Swal.showLoading();
+						},
+						willClose: () => {
+							clearInterval(timerInterval);
+						},
+					});
 				}
 			);
 	};
@@ -75,7 +108,9 @@ export const Orders = () => {
 	const disabledThird = () => {
 		return !(cashOut !== "");
 	};
-	return (
+	return empty ? (
+		<OrderWithEmptyCart />
+	) : (
 		<div className='ordersContainer'>
 			<form ref={form} onSubmit={sendEmail} className='contactForm'>
 				<Box sx={{ maxWidth: 400 }}>
@@ -97,7 +132,7 @@ export const Orders = () => {
 									onChange={(e) => setName(e.target.value)}
 								/>
 								<TextField
-									id='adress'
+									id='street'
 									label={
 										adress !== ""
 											? ""
@@ -266,6 +301,49 @@ export const Orders = () => {
 							</StepContent>
 						</Step>
 						<Step>
+							<StepLabel>Cupon - Mensaje</StepLabel>
+							<StepContent>
+								<TextField
+									id='cupon'
+									label={
+										cupon !== ""
+											? ""
+											: "Si tenés un cupon , ingresalo!"
+									}
+									value={cupon !== "" ? cupon : ""}
+									variant='outlined'
+									required={false}
+									margin='dense'
+									fullWidth
+									type='text'
+									onChange={(e) => setCupon(e.target.value)}
+								/>
+								<TextField
+									id='message'
+									label={msg !== "" ? "" : "Mensaje opcional"}
+									value={msg !== "" ? msg : ""}
+									multiline
+									rows={4}
+									required={false}
+									margin='dense'
+									className='messageContainer'
+									onChange={(e) => setMsg(e.target.value)}
+								/>
+								<Box sx={{ mb: 2 }}>
+									<div>
+										<Button
+											variant='contained'
+											onClick={handleNext}
+											sx={{ mt: 1, mr: 1 }}
+											disabled={disabledFirst()}
+										>
+											Continuar
+										</Button>
+									</div>
+								</Box>
+							</StepContent>
+						</Step>
+						<Step>
 							<StepLabel>Enviar</StepLabel>
 							<StepContent>
 								<input
@@ -302,6 +380,22 @@ export const Orders = () => {
 									className='inputHidden'
 									name='user_envio'
 									defaultValue={envio}
+								/>
+								<input
+									className='inputHidden'
+									name='user_cupon'
+									defaultValue={
+										cupon === ""
+											? "No ingreso Cupon"
+											: cupon
+									}
+								/>
+								<input
+									className='inputHidden'
+									name='user_msg'
+									defaultValue={
+										msg === "" ? "No ingreso mensaje" : msg
+									}
 								/>
 								<input
 									className='inputHidden'
