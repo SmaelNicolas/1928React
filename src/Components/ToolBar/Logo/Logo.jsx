@@ -12,7 +12,7 @@ export const Logo = () => {
 				className='logoImg'
 				src={logoMini}
 				alt='logo 1928'
-				title='logo'
+				title='1928 Showroom'
 				loading='lazy'
 			/>
 			<p className='logoText'>Plus Size</p>

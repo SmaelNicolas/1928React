@@ -61,12 +61,12 @@ export const SearchResults = () => {
 									className='notFoundImg'
 									src={truckGif}
 									alt='gif truck'
-									title='gif'
+									title='Ya esta llegando'
 									loading='lazy'
 								/>
 								<Divider />
 								<Divider />
-								<p className='notFoundMsg'>PROXIMAMENTE!</p>
+								<p className='notFoundMsg'>PROXIMAMENTE...</p>
 							</div>
 						)}
 						<Divider />

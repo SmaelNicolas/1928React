@@ -17,7 +17,7 @@ export const OrderWithEmptyCart = () => {
 				className='emptyOrderImg'
 				src={emptyGif}
 				alt='empty img'
-				title='empty'
+				title='Por favor agrega un producto'
 			/>
 			<Divider />
 			<p className='ordersEmptyText'>Carrito vacio!</p>
