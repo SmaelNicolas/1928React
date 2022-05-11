@@ -41,7 +41,7 @@ export const Orders = () => {
 
 	useEffect(() => {
 		quantityItems() > 0 ? setEmpty(false) : setEmpty(true);
-	}, [addedToCart]);
+	}, [addedToCart, quantityItems]);
 
 	const sendEmail = (e) => {
 		e.preventDefault();

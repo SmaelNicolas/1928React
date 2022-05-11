@@ -24,7 +24,7 @@ export const SearchResults = () => {
 	return (
 		<>
 			<Helmet>
-				<title>1928 Showroom - Search</title>
+				<title>1928 Showroom - Busqueda {query}</title>
 				<meta
 					name='description'
 					content='Celebramos la belleza en todas sus formas. Todas las semanas nuevos ingresos.'

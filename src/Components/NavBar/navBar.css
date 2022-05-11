@@ -35,6 +35,10 @@
 	display: none !important;
 }
 
+.tabsListComponent {
+	display: none !important;
+}
+
 @media only screen and (max-width: 635px) {
 	.menuIcon {
 		display: flex !important;
@@ -60,6 +64,7 @@
 	}
 
 	.tabsListComponent {
+		display: flex !important;
 		width: 100%;
 		height: 100%;
 		position: fixed;

@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet-async";
 
 import "./home.css";
 
-export const Home = ({ value }) => {
+export const Home = () => {
 	return (
 		<>
 			<Helmet>
@@ -29,7 +29,7 @@ export const Home = ({ value }) => {
 				<h2 className='homeTitle'>DESTACADOS</h2>
 				<Divider />
 
-				<ItemShowcase value={value} />
+				<ItemShowcase value={"destacado"} />
 				<Divider />
 				<Divider />
 				<ButtonMore

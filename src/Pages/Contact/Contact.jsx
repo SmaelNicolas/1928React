@@ -10,7 +10,7 @@ export const Contact = () => {
 	return (
 		<>
 			<Helmet>
-				<title>1928 Showroom</title>
+				<title>1928 Showroom - Contacto</title>
 				<meta
 					name='description'
 					content='Celebramos la belleza en todas sus formas. Todas las semanas nuevos ingresos.'

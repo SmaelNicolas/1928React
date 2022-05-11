@@ -4,39 +4,17 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
-import { Home } from "../../Pages/Home/Home";
-import { Jeans } from "../../Pages/Jeans/Jeans";
-import { Remeras } from "../../Pages/Remeras/Remeras";
-import { Sweaters } from "../../Pages/Sweaters/Sweaters";
-import { Accesorios } from "../../Pages/Accesorios/Accesorios";
-import { Contact } from "../../Pages/Contact/Contact";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import "./navBar.css";
+import { useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
 	const [value, setValue] = useState(0);
 	const [showMenu, setShowMenu] = useState(false);
 
-	function TabPanel(props) {
-		const { children, value, index, ...other } = props;
+	const navigate = useNavigate();
 
-		return (
-			<div
-				role='tabpanel'
-				hidden={value !== index}
-				id={`simple-tabpanel-${index}`}
-				aria-labelledby={`simple-tab-${index}`}
-				{...other}
-			>
-				{value === index && (
-					<Box sx={{ p: 3 }}>
-						<div>{children}</div>
-					</Box>
-				)}
-			</div>
-		);
-	}
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
 	};
@@ -45,7 +23,8 @@ export const NavBar = () => {
 		setShowMenu(!showMenu);
 	};
 
-	const clickSection = () => {
+	const clickSection = (value) => {
+		navigate(value);
 		handleClickMenu();
 		window.scrollTo(0, 0);
 	};
@@ -68,13 +47,26 @@ export const NavBar = () => {
 					aria-label='basic tabs example'
 					className='tabsContainer'
 				>
-					<Tab label='Inicio' />
-					<Tab label='Jeans' />
-					<Tab label='Remeras' />
-					<Tab label='Sweaters' />
-					<Tab label='Accesorios' />
-					<Tab label='Contacto' />
+					<Tab label='Inicio' onClick={() => clickSection("")} />
+					<Tab label='Jeans' onClick={() => clickSection("jeans")} />
+					<Tab
+						label='Remeras'
+						onClick={() => clickSection("remeras")}
+					/>
+					<Tab
+						label='Sweaters'
+						onClick={() => clickSection("sweaters")}
+					/>
+					<Tab
+						label='Accesorios'
+						onClick={() => clickSection("accesorios")}
+					/>
+					<Tab
+						label='Contacto'
+						onClick={() => clickSection("contacto")}
+					/>
 				</Tabs>
+
 				{showMenu && (
 					<Tabs
 						centered={true}
@@ -83,36 +75,30 @@ export const NavBar = () => {
 						aria-label='basic tabs example'
 						className='tabsListComponent'
 					>
-						<Tab label='Inicio' onClick={() => clickSection()} />
-						<Tab label='Jeans' onClick={() => clickSection()} />
-						<Tab label='Remeras' onClick={() => clickSection()} />
-						<Tab label='Sweaters' onClick={() => clickSection()} />
+						<Tab label='Inicio' onClick={() => clickSection("")} />
+						<Tab
+							label='Jeans'
+							onClick={() => clickSection("jeans")}
+						/>
+						<Tab
+							label='Remeras'
+							onClick={() => clickSection("remeras")}
+						/>
+						<Tab
+							label='Sweaters'
+							onClick={() => clickSection("sweaters")}
+						/>
 						<Tab
 							label='Accesorios'
-							onClick={() => clickSection()}
+							onClick={() => clickSection("accesorios")}
 						/>
-						<Tab label='Contacto' onClick={() => clickSection()} />
+						<Tab
+							label='Contacto'
+							onClick={() => clickSection("contacto")}
+						/>
 					</Tabs>
 				)}
 			</Box>
-			<TabPanel value={value} index={0}>
-				<Home value={"destacado"} />
-			</TabPanel>
-			<TabPanel value={value} index={1}>
-				<Jeans value={"jean"} />
-			</TabPanel>
-			<TabPanel value={value} index={2}>
-				<Remeras value={"remera"} />
-			</TabPanel>
-			<TabPanel value={value} index={3}>
-				<Sweaters value={"sweater"} />
-			</TabPanel>
-			<TabPanel value={value} index={4}>
-				<Accesorios value={"accesorio"} />
-			</TabPanel>
-			<TabPanel value={value} index={5}>
-				<Contact />
-			</TabPanel>
 		</>
 	);
 };
