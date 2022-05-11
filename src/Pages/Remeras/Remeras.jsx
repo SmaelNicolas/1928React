@@ -17,7 +17,7 @@ export const Remeras = () => {
 				/>
 				<link rel='canonical' href='' />
 			</Helmet>
-			<div className='remerasContainer'>
+			<div className='sectionContainer'>
 				<Divider />
 				<Divider />
 				<ItemShowcase value={"remera"} />

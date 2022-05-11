@@ -17,7 +17,7 @@ export const Contact = () => {
 				/>
 				<link rel='canonical' href='' />
 			</Helmet>
-			<div className='contactContainer'>
+			<div className='sectionContainer'>
 				<Divider />
 				<ContactDirectInfo />
 				<Divider />

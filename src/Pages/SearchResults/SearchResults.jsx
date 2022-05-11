@@ -31,7 +31,7 @@ export const SearchResults = () => {
 				/>
 				<link rel='canonical' href='' />
 			</Helmet>
-			<div className='todosContainer'>
+			<div className='sectionContainer'>
 				{loader ? (
 					<>
 						<Divider />

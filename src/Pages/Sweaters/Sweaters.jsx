@@ -17,7 +17,7 @@ export const Sweaters = () => {
 				/>
 				<link rel='canonical' href='' />
 			</Helmet>
-			<div className='sweatersContainer'>
+			<div className='sectionContainer'>
 				<Divider />
 				<Divider />
 				<ItemShowcase value={"sweater"} />
