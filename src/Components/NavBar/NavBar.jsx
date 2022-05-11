@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 
 import { Home } from "../../Pages/Home/Home";
 import { Jeans } from "../../Pages/Jeans/Jeans";
@@ -32,7 +31,7 @@ export const NavBar = () => {
 			>
 				{value === index && (
 					<Box sx={{ p: 3 }}>
-						<Typography>{children}</Typography>
+						<div>{children}</div>
 					</Box>
 				)}
 			</div>
