@@ -9,7 +9,10 @@
 }
 
 .buttonFinishCart {
-	background-color: rgba(40, 167, 40, 0.842) !important;
+	border: 3px solid rgb(30, 235, 75) !important;
+}
+.buttonFinishCartRed {
+	border: 3px solid rgb(236, 26, 37) !important;
 }
 
 .listItemCartContant {

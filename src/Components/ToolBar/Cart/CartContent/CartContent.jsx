@@ -48,11 +48,13 @@ export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 			</List>
 			<Button
 				variant='contained'
-				className='buttonFinishCart'
 				endIcon={<PriceCheckIcon />}
 				disabled={items === 0}
 				onClick={() => handleClickFinish()}
 				onFocus={toggleDrawer(anchor, false)}
+				className={
+					items === 0 ? "buttonFinishCartRed" : " buttonFinishCart"
+				}
 			>
 				IR A FINALIZAR COMPRA
 			</Button>
