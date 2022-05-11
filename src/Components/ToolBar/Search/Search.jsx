@@ -2,8 +2,11 @@ import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 export const Search = () => {
+	const navigate = useNavigate();
+
 	const Search = styled("div")(({ theme }) => ({
 		position: "relative",
 		borderRadius: theme.shape.borderRadius,
@@ -34,7 +37,6 @@ export const Search = () => {
 		color: "inherit",
 		"& .MuiInputBase-input": {
 			padding: theme.spacing(1, 1, 1, 0),
-			// vertical padding + font size from searchIcon
 			paddingLeft: `calc(1em + ${theme.spacing(4)})`,
 			transition: theme.transitions.create("width"),
 			width: "100%",
@@ -53,7 +55,12 @@ export const Search = () => {
 				placeholder='Buscar...'
 				inputProps={{ "aria-label": "search" }}
 				sx={{ color: "black" }}
-				onChange={(e) => console.log(e.target.value)}
+				onFocus={(e) => console.log(e.target.value)}
+				onKeyDown={(e) => {
+					if (e.key === "Enter") {
+						navigate(`search/${e.target.value}`);
+					}
+				}}
 			/>
 		</Search>
 	);
