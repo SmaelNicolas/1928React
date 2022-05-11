@@ -22,7 +22,6 @@ export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 	const navigate = useNavigate();
 
 	const handleClickFinish = () => {
-		toggleDrawer(anchor, false);
 		navigate("order");
 		window.scrollTo(0, 0);
 	};
@@ -53,6 +52,7 @@ export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 				endIcon={<PriceCheckIcon />}
 				disabled={items === 0}
 				onClick={() => handleClickFinish()}
+				onFocus={toggleDrawer(anchor, false)}
 			>
 				IR A FINALIZAR COMPRA
 			</Button>
