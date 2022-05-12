@@ -8,7 +8,11 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-import Typography from "@mui/material/Typography";
+import CreditScoreIcon from "@mui/icons-material/CreditScore";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
+
+import imgBack from "../../Assets/logoBck.jpg";
 
 import "./itemCard.css";
 
@@ -25,14 +29,27 @@ export const ItemCard = ({ item, hide }) => {
 				<div className='cardContainer'>
 					<img
 						className='cardImg'
-						src={item.img}
+						src={item.img === "logo" ? imgBack : item.img}
 						alt='img producto'
 						title={item.title.toUpperCase()}
 						loading='lazy'
 						onClick={handleOpen}
 					/>
 					<div className='cardTitle'>{item.title.toUpperCase()}</div>
-					<div className='cardPrice'>$ {item.price} </div>
+					<div className='cardPrice'>
+						<AttachMoneyIcon />
+						<p className='cardCreditText'>{item.price}</p>
+					</div>
+					<div className='cardPayment'>
+						<CreditScoreIcon />
+						<p className='cardPaymentText'>3 Cuotas sin interés</p>
+					</div>
+					<div className='cardPayment'>
+						<CurrencyExchangeIcon />
+						<p className='cardPaymentText'>
+							{item.discount}% Efectivo y/o Transferencia
+						</p>
+					</div>
 					<Divider />
 					{!hide && (
 						<Button
@@ -66,7 +83,11 @@ export const ItemCard = ({ item, hide }) => {
 								>
 									<img
 										className='cardImgOnModal'
-										src={item.img}
+										src={
+											item.img === "logo"
+												? imgBack
+												: item.img
+										}
 										alt='img producto'
 										title={item.title}
 										loading='lazy'
