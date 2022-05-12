@@ -19,6 +19,8 @@ export const Remeras = () => {
 			</Helmet>
 			<div className='sectionContainer'>
 				<Divider />
+				<h1 className='title'>REMERAS</h1>
+
 				<Divider />
 				<ItemShowcase value={"remera"} />
 				<Divider />

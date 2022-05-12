@@ -28,7 +28,9 @@ export const ListItemInCart = ({ cart, toggleDrawer }) => {
 						<TextField
 							id='outlined-read-only-input'
 							label='Item'
-							value={`${item.title} x ${item.quantity}`}
+							value={`${item.title.toUpperCase()} x ${
+								item.quantity
+							}`}
 							InputProps={{
 								readOnly: true,
 							}}

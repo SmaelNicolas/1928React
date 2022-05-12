@@ -32,23 +32,22 @@ export const SearchResults = () => {
 				<link rel='canonical' href='' />
 			</Helmet>
 			<div className='sectionContainer'>
+				<Divider />
+				<h1 className='title'>BUSQUEDA</h1>
+				<Divider />
+				<Divider />
+
 				{loader ? (
 					<>
-						<Divider />
-						<Divider />
 						<Loader />
 					</>
 				) : (
 					<>
-						<Divider />
-						<Divider />
-						<ButtonMore
+						{/* <ButtonMore
 							title='INICIO'
 							path='/'
 							icon={<ArrowBackIcon />}
-						/>
-						<Divider />
-						<Divider />
+						/> */}
 						{exist ? (
 							<div className='itemShowcaseContainer'>
 								{products.map((item) => (

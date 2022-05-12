@@ -19,6 +19,7 @@ export const Sweaters = () => {
 			</Helmet>
 			<div className='sectionContainer'>
 				<Divider />
+				<h1 className='title'>SWEATERS</h1>
 				<Divider />
 				<ItemShowcase value={"sweater"} />
 				<Divider />

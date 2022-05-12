@@ -6,13 +6,6 @@
 	align-items: center;
 }
 
-.homeTitle {
-	font-size: calc(35px + 1vw);
-	font-weight: 100;
-	letter-spacing: 0.9px;
-	color: black;
-}
-
 .hiddenH1 {
 	position: absolute;
 	top: -300px;

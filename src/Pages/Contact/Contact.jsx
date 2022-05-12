@@ -19,6 +19,8 @@ export const Contact = () => {
 			</Helmet>
 			<div className='sectionContainer'>
 				<Divider />
+				<h1 className='title'>CONTACTANOS</h1>
+				<Divider />
 				<ContactDirectInfo />
 				<Divider />
 				<Divider />

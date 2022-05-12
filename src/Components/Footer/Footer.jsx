@@ -67,7 +67,14 @@ export const Footer = () => {
 			<div className='footerContact'>
 				<div className='footerContactSections'>
 					<div className='footerContactTitles'>CONTACTANOS</div>
-					<div className='footerContactDirectInfo'>
+					<div
+						className='footerContactDirectInfo'
+						onClick={() =>
+							openInNewTab(
+								"https://api.whatsapp.com/send/?phone=542914182420"
+							)
+						}
+					>
 						<IconButton aria-label='phone'>
 							<PhoneIcon />
 						</IconButton>
@@ -75,28 +82,28 @@ export const Footer = () => {
 							2914182420
 						</p>
 					</div>
-					<div className='footerContactDirectInfo'>
-						<IconButton
-							aria-label='email'
-							onClick={() =>
-								openInNewTab("mailto:1928showroom@gmail.com")
-							}
-						>
+					<div
+						className='footerContactDirectInfo'
+						onClick={() =>
+							openInNewTab("mailto:1928showroom@gmail.com")
+						}
+					>
+						<IconButton aria-label='email'>
 							<AlternateEmailIcon />
 						</IconButton>
 						<p className='footerContactDirectInfoText'>
 							1928showroom@gmail.com
 						</p>
 					</div>
-					<div className='footerContactDirectInfo'>
-						<IconButton
-							aria-label='place'
-							onClick={() =>
-								openInNewTab(
-									"https://www.google.com.ar/maps/place/1928Showroom/@-38.7014743,-62.273796,15z/data=!4m5!3m4!1s0x0:0x1faf91a144097c96!8m2!3d-38.7014743!4d-62.273796"
-								)
-							}
-						>
+					<div
+						className='footerContactDirectInfo'
+						onClick={() =>
+							openInNewTab(
+								"https://www.google.com.ar/maps/place/1928Showroom/@-38.7014743,-62.273796,15z/data=!4m5!3m4!1s0x0:0x1faf91a144097c96!8m2!3d-38.7014743!4d-62.273796"
+							)
+						}
+					>
+						<IconButton aria-label='place'>
 							<PlaceIcon />
 						</IconButton>
 						<p className='footerContactDirectInfoText'>

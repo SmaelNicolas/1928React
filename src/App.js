@@ -15,11 +15,13 @@ import { Jeans } from "./Pages/Jeans/Jeans";
 import { Sweaters } from "./Pages/Sweaters/Sweaters";
 import { Accesorios } from "./Pages/Accesorios/Accesorios";
 import { Contact } from "./Pages/Contact/Contact";
+import { WhatsappButton } from "./Components/WhatsAppButton/WhatsappButton";
 
 function App() {
 	return (
 		<CartProvider>
 			<div className='app'>
+				<WhatsappButton />
 				<TopBar />
 				<ToolBar />
 				<NavBar />

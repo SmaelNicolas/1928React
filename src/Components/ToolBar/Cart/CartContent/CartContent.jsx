@@ -52,9 +52,6 @@ export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 				disabled={items === 0}
 				onClick={() => handleClickFinish()}
 				onFocus={toggleDrawer(anchor, false)}
-				className={
-					items === 0 ? "buttonFinishCartRed" : " buttonFinishCart"
-				}
 			>
 				IR A FINALIZAR COMPRA
 			</Button>

@@ -27,11 +27,11 @@ export const ItemCard = ({ item, hide }) => {
 						className='cardImg'
 						src={item.img}
 						alt='img producto'
-						title={item.title}
+						title={item.title.toUpperCase()}
 						loading='lazy'
 						onClick={handleOpen}
 					/>
-					<div className='cardTitle'>{item.title}</div>
+					<div className='cardTitle'>{item.title.toUpperCase()}</div>
 					<div className='cardPrice'>$ {item.price} </div>
 					<Divider />
 					{!hide && (

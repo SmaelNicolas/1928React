@@ -26,7 +26,7 @@ export const Home = () => {
 				<SwiperHome />
 				<Divider />
 				<Divider />
-				<h2 className='homeTitle'>DESTACADOS</h2>
+				<h2 className='title'>DESTACADOS</h2>
 				<Divider />
 
 				<ItemShowcase value={"destacado"} />

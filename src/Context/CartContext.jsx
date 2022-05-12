@@ -50,7 +50,7 @@ export const CartProvider = (props) => {
 		}
 		Toast.fire({
 			icon: "success",
-			title: `${item.title} agregado!`,
+			title: `${item.title.toUpperCase()} Agregado!`,
 		});
 		handleAdd();
 	}
@@ -65,7 +65,7 @@ export const CartProvider = (props) => {
 		}
 		Toast2.fire({
 			icon: "error",
-			title: `${item.title} Eliminado!`,
+			title: `${item.title.toUpperCase()} Eliminado!`,
 		});
 		handleAdd();
 	};

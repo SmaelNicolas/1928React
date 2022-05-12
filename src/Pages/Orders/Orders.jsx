@@ -20,6 +20,7 @@ import { ItemCard } from "../../Components/ItemCard/ItemCard";
 import { useNavigate } from "react-router-dom";
 import { OrderWithEmptyCart } from "../../Components/ErrorsMessages/OrderEmpty/OrderWithEmptyCart";
 import Swal from "sweetalert2";
+import { Divider } from "../../Components/Divider/Divider";
 
 export const Orders = () => {
 	const { cart, totalPrice, quantityItems, emptyCart, addedToCart } =
@@ -36,7 +37,7 @@ export const Orders = () => {
 	const [msg, setMsg] = useState("");
 	const [cashOut, setCashOut] = useState("");
 	const [activeStep, setActiveStep] = useState(0);
-	const [empty, setEmpty] = useState();
+	const [empty, setEmpty] = useState(true);
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -124,6 +125,9 @@ export const Orders = () => {
 				<OrderWithEmptyCart />
 			) : (
 				<div className='sectionContainer'>
+					<Divider />
+					<h1 className='title'>GENERA TU ORDEN</h1>
+					<Divider />
 					<form
 						ref={form}
 						onSubmit={sendEmail}
@@ -225,11 +229,6 @@ export const Orders = () => {
 													onClick={handleNext}
 													sx={{ mt: 1, mr: 1 }}
 													disabled={disabledFirst()}
-													className={
-														disabledFirst()
-															? "buttonFinishCartRed"
-															: " buttonFinishCart"
-													}
 												>
 													Continuar
 												</Button>
@@ -277,11 +276,6 @@ export const Orders = () => {
 													onClick={handleNext}
 													sx={{ mt: 1, mr: 1 }}
 													disabled={disabledSecond()}
-													className={
-														disabledSecond()
-															? "buttonFinishCartRed"
-															: " buttonFinishCart"
-													}
 												>
 													Continuar
 												</Button>
@@ -346,11 +340,6 @@ export const Orders = () => {
 													onClick={handleNext}
 													sx={{ mt: 1, mr: 1 }}
 													disabled={disabledThird()}
-													className={
-														disabledThird()
-															? "buttonFinishCartRed"
-															: " buttonFinishCart"
-													}
 												>
 													Continuar
 												</Button>
@@ -408,7 +397,6 @@ export const Orders = () => {
 													onClick={handleNext}
 													sx={{ mt: 1, mr: 1 }}
 													disabled={disabledFirst()}
-													className=' buttonFinishCart'
 												>
 													Continuar
 												</Button>
@@ -483,7 +471,7 @@ export const Orders = () => {
 											name='user_cart'
 											defaultValue={cart.map(
 												(item) =>
-													`${item.title} x${
+													`${item.title.toUpperCase()} x${
 														item.quantity
 													} = $ ${
 														item.quantity *
@@ -527,7 +515,7 @@ export const Orders = () => {
 							</Stepper>
 						</Box>
 					</form>
-					<h1> Tus Productos</h1>
+					<h2> Tus Productos</h2>
 					<div className='itemShowcaseContainer'>
 						{cart.map((item) => (
 							<ItemCard item={item} hide={true} key={item.id} />
