@@ -71,6 +71,7 @@ export const Orders = () => {
 					}).then(() => {
 						emptyCart();
 						navigate("/");
+						window.scrollTo(0, 0);
 					});
 				},
 				() => {
@@ -486,7 +487,7 @@ export const Orders = () => {
 										<input
 											className='inputHidden'
 											name='user_totalprice'
-											defaultValue={totalPrice()}
+											defaultValue={`$ ${totalPrice()}`}
 										/>
 										<input
 											className='inputHidden'
@@ -502,7 +503,6 @@ export const Orders = () => {
 													sx={{ mt: 1, mr: 1 }}
 													type='submit'
 													onClick={handleNext}
-													className=' buttonFinishCart'
 												>
 													Enviar
 												</Button>
