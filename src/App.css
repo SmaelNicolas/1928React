@@ -19,3 +19,9 @@
 	color: black;
 	text-align: center;
 }
+
+.hiddenH1 {
+	position: absolute;
+	top: -300px;
+	opacity: 0;
+}

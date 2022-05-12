@@ -19,7 +19,11 @@ export const Accesorios = () => {
 			</Helmet>
 			<div className='sectionContainer'>
 				<Divider />
-				<h1 className='title'>ACCESORIOS</h1>
+				<h1 className='hiddenH1'>
+					1928 Showroom ropa mujer jeans remeras sweaters camperas
+					accesorios
+				</h1>
+				<h2 className='title'>ACCESORIOS</h2>
 				<Divider />
 				<ItemShowcase value={"accesorio"} />
 				<Divider />

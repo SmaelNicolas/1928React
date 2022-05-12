@@ -19,7 +19,11 @@ export const Contact = () => {
 			</Helmet>
 			<div className='sectionContainer'>
 				<Divider />
-				<h1 className='title'>CONTACTANOS</h1>
+				<h1 className='hiddenH1'>
+					1928 Showroom ropa mujer jeans remeras sweaters camperas
+					accesorios
+				</h1>
+				<h2 className='title'>CONTACTANOS</h2>
 				<Divider />
 				<ContactDirectInfo />
 				<Divider />

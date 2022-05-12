@@ -1,7 +1,5 @@
 import React from "react";
-import { ButtonMore } from "../../ButtonMore/ButtonMore";
 import { Divider } from "../../Divider/Divider";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import emptyGif from "../../../Assets/empty.gif";
 
 import "./orderWithEmptyCart.css";
@@ -11,7 +9,6 @@ export const OrderWithEmptyCart = () => {
 		<div className='ordersContainerEmpty'>
 			<Divider />
 			<Divider />
-			<ButtonMore title='INICIO' path='/' icon={<ArrowBackIcon />} />
 			<Divider />
 			<img
 				className='emptyOrderImg'

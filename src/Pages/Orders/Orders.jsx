@@ -126,7 +126,11 @@ export const Orders = () => {
 			) : (
 				<div className='sectionContainer'>
 					<Divider />
-					<h1 className='title'>GENERA TU ORDEN</h1>
+					<h1 className='hiddenH1'>
+						1928 Showroom ropa mujer jeans remeras sweaters camperas
+						accesorios
+					</h1>
+					<h2 className='title'>GENERA TU ORDEN</h2>
 					<Divider />
 					<form
 						ref={form}
