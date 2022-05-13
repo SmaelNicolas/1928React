@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Paper } from "@mui/material";
 import Button from "@mui/material/Button";
 import { Divider } from "../Divider/Divider";
@@ -12,6 +12,7 @@ import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 import CloseIcon from "@mui/icons-material/Close";
+import Snackbar from "@mui/material/Snackbar";
 
 import imgBack from "../../Assets/logoBck.jpg";
 
@@ -19,98 +20,130 @@ import "./itemCard.css";
 
 export const ItemCard = ({ item, hide }) => {
 	const { addItemToCart } = useContext(CartContext);
+	const [openModal, setOpenModal] = useState(false);
 
-	const [open, setOpen] = React.useState(false);
-	const handleOpen = () => setOpen(true);
-	const handleClose = () => setOpen(false);
+	const [openSnack, setOpenSnack] = useState({
+		open: false,
+		vertical: "top",
+		horizontal: "right",
+	});
+
+	const { vertical, horizontal, open } = openSnack;
+
+	const handleSnackBar = () => {
+		setOpenSnack({ open: true, vertical: "top", horizontal: "right" });
+		setTimeout(() => {
+			setOpenSnack({ open: false, vertical: "top", horizontal: "right" });
+		}, 1500);
+	};
+
+	const handleAddItem = (item) => {
+		handleSnackBar();
+		addItemToCart(item);
+	};
+
+	const handleOpen = () => setOpenModal(true);
+	const handleClose = () => setOpenModal(false);
 
 	return (
-		<div className='card'>
-			<Paper elevation={6}>
-				<div className='cardContainer'>
-					{item.stock === "false" && (
-						<div className='cardStock'>SIN STOCK</div>
-					)}
-					<img
-						className='cardImg'
-						src={item.img === "logo" ? imgBack : item.img}
-						alt='img producto'
-						title={item.title.toUpperCase()}
-						loading='lazy'
-						onClick={handleOpen}
-					/>
-					<div className='cardTitle'>{item.title.toUpperCase()}</div>
-					<div className='cardPrice'>
-						<AttachMoneyIcon />
-						<p className='cardCreditText'>{item.price}</p>
+		<>
+			<Snackbar
+				anchorOrigin={{ vertical, horizontal }}
+				open={open}
+				message={`${item.title} Agregado!`}
+				key={item.id}
+			/>
+			<div className='card'>
+				<Paper elevation={6}>
+					<div className='cardContainer'>
+						{item.stock === "false" && (
+							<div className='cardStock'>SIN STOCK</div>
+						)}
+						<img
+							className='cardImg'
+							src={item.img === "logo" ? imgBack : item.img}
+							alt='img producto'
+							title={item.title.toUpperCase()}
+							loading='lazy'
+							onClick={handleOpen}
+						/>
+						<div className='cardTitle'>
+							{item.title.toUpperCase()}
+						</div>
+						<div className='cardPrice'>
+							<AttachMoneyIcon />
+							<p className='cardCreditText'>{item.price}</p>
+						</div>
+						<div className='cardPayment'>
+							<CreditScoreIcon />
+							<p className='cardPaymentText'>
+								3 Cuotas sin interés
+							</p>
+						</div>
+						<div className='cardPayment'>
+							<CurrencyExchangeIcon />
+							<p className='cardPaymentText'>
+								{item.discount}% Efectivo y/o Transferencia
+							</p>
+						</div>
+						<Divider />
+						{!hide && (
+							<Button
+								variant='contained'
+								size='small'
+								endIcon={<AddShoppingCartIcon />}
+								onClick={() => handleAddItem(item)}
+								className={
+									item.stock === "false" ? "hideButton" : ""
+								}
+							>
+								Agregar al carrito
+							</Button>
+						)}
+						<Divider />
 					</div>
-					<div className='cardPayment'>
-						<CreditScoreIcon />
-						<p className='cardPaymentText'>3 Cuotas sin interés</p>
-					</div>
-					<div className='cardPayment'>
-						<CurrencyExchangeIcon />
-						<p className='cardPaymentText'>
-							{item.discount}% Efectivo y/o Transferencia
-						</p>
-					</div>
-					<Divider />
-					{!hide && (
-						<Button
-							variant='contained'
-							size='small'
-							endIcon={<AddShoppingCartIcon />}
-							onClick={() => addItemToCart(item)}
-							className={
-								item.stock === "false" ? "hideButton" : ""
-							}
+					<div>
+						<Modal
+							aria-labelledby='transition-modal-title'
+							aria-describedby='transition-modal-description'
+							open={openModal}
+							onClose={handleClose}
+							closeAfterTransition
+							BackdropComponent={Backdrop}
+							BackdropProps={{
+								timeout: 500,
+							}}
 						>
-							Agregar al carrito
-						</Button>
-					)}
-					<Divider />
-				</div>
-				<div>
-					<Modal
-						aria-labelledby='transition-modal-title'
-						aria-describedby='transition-modal-description'
-						open={open}
-						onClose={handleClose}
-						closeAfterTransition
-						BackdropComponent={Backdrop}
-						BackdropProps={{
-							timeout: 500,
-						}}
-					>
-						<Fade in={open}>
-							<Box className='boxModal'>
-								<CloseIcon
-									className='iconCloseModal'
-									onClick={handleClose}
-								/>
-								<div
-									id='transition-modal-description'
-									sx={{ mt: 2 }}
-								>
-									<img
-										className='cardImgOnModal'
-										src={
-											item.img === "logo"
-												? imgBack
-												: item.img
-										}
-										alt='img producto'
-										title={item.title}
-										loading='lazy'
+							<Fade in={openModal}>
+								<Box className='boxModal'>
+									<CloseIcon
+										className='iconCloseModal'
+										onClick={handleClose}
 									/>
-								</div>
-								<Divider />
-								<div>{item.info}</div>
-							</Box>
-						</Fade>
-					</Modal>
-				</div>
-			</Paper>
-		</div>
+									<div
+										id='transition-modal-description'
+										sx={{ mt: 2 }}
+									>
+										<img
+											className='cardImgOnModal'
+											src={
+												item.img === "logo"
+													? imgBack
+													: item.img
+											}
+											alt='img producto'
+											title={item.title}
+											loading='lazy'
+										/>
+									</div>
+									<Divider />
+									<div>{item.info}</div>
+								</Box>
+							</Fade>
+						</Modal>
+					</div>
+				</Paper>
+			</div>
+		</>
 	);
 };

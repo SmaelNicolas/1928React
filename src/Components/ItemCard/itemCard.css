@@ -91,3 +91,14 @@
 	border-radius: 50%;
 	border: 1px solid white;
 }
+
+.MuiSnackbarContent-root {
+	background-color: #4e9a51 !important;
+}
+
+.MuiSnackbarContent-message {
+	color: rgba(255, 255, 255, 0.829) !important;
+	font-weight: 500;
+	font-size: 15px;
+	text-transform: uppercase;
+}
