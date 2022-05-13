@@ -17,5 +17,6 @@
 }
 
 .listItemCartContant {
+	justify-content: space-between !important;
 	align-items: flex-end !important;
 }

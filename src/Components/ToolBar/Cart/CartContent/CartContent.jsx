@@ -4,7 +4,7 @@ import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import Button from "@mui/material/Button";
-
+import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import CloseIcon from "@mui/icons-material/Close";
 import PriceCheckIcon from "@mui/icons-material/PriceCheck";
 
@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 import "./cartContent.css";
 
 export const CartContent = ({ anchor, toggleDrawer, cart }) => {
-	const { quantityItems } = useContext(CartContext);
+	const { quantityItems, emptyCart } = useContext(CartContext);
 
 	const [items] = useState(quantityItems());
 	const navigate = useNavigate();
@@ -41,6 +41,10 @@ export const CartContent = ({ anchor, toggleDrawer, cart }) => {
 					<CloseIcon
 						fontSize='large'
 						onClick={toggleDrawer(anchor, false)}
+					/>
+					<RemoveShoppingCartIcon
+						fontSize='large'
+						onClick={() => emptyCart()}
 					/>
 				</ListItem>
 				<Divider variant='inset' component='li' />

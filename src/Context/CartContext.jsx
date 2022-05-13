@@ -48,10 +48,10 @@ export const CartProvider = (props) => {
 		} else {
 			setCart([...cart, item]);
 		}
-		Toast.fire({
-			icon: "success",
-			title: `${item.title.toUpperCase()} Agregado!`,
-		});
+		// Toast.fire({
+		// 	icon: "success",
+		// 	title: `${item.title.toUpperCase()} Agregado!`,
+		// });
 		handleAdd();
 	}
 
