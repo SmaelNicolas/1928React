@@ -8,7 +8,7 @@ import "./buttonMore.css";
 export const ButtonMore = ({ title, path, icon }) => {
 	const navigate = useNavigate();
 	const handleClick = () => {
-		navigate(path);
+		navigate(`/${path}`);
 		window.scrollTo(0, 0);
 	};
 
