@@ -2,6 +2,7 @@
 	min-width: 340px;
 	flex-direction: column;
 	position: relative;
+	padding-bottom: 15px;
 }
 
 .MuiListItemText-primary {
