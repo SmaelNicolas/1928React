@@ -60,6 +60,9 @@ export const ItemCard = ({ item, hide }) => {
 							size='small'
 							endIcon={<AddShoppingCartIcon />}
 							onClick={() => addItemToCart(item)}
+							className={
+								item.stock === "false" ? "hideButton" : ""
+							}
 						>
 							Agregar al carrito
 						</Button>
