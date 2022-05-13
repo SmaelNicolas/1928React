@@ -2,10 +2,16 @@
 	position: sticky;
 	top: 0px;
 	z-index: 1000;
+	background-color: white !important;
+}
+
+.MuiToolbar-regular {
+	background-color: white !important;
 }
 
 @media only screen and (max-width: 635px) {
 	.toolbarAppBar {
 		padding-left: 50px;
+		background-color: white !important;
 	}
 }
