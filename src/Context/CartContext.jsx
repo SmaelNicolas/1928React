@@ -1,6 +1,4 @@
 import React, { createContext, useState } from "react";
-import { Toast } from "../Helpers/toast";
-import { Toast2 } from "../Helpers/toast";
 
 import "./cartContext.css";
 
@@ -48,10 +46,6 @@ export const CartProvider = (props) => {
 		} else {
 			setCart([...cart, item]);
 		}
-		// Toast.fire({
-		// 	icon: "success",
-		// 	title: `${item.title.toUpperCase()} Agregado!`,
-		// });
 		handleAdd();
 	}
 
@@ -63,10 +57,6 @@ export const CartProvider = (props) => {
 		} else {
 			setCart(cart.filter((it) => it.id !== item.id));
 		}
-		Toast2.fire({
-			icon: "error",
-			title: `${item.title.toUpperCase()} Eliminado!`,
-		});
 		handleAdd();
 	};
 

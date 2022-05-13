@@ -3,7 +3,7 @@ import { NavBar } from "./Components/NavBar/NavBar";
 import { ToolBar } from "./Components/ToolBar/ToolBar";
 import { TopBar } from "./Components/TopBar/TopBar";
 import { CartProvider } from "./Context/CartContext";
-import { Routes, Route, Redirect } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Orders } from "./Pages/Orders/Orders";
 import { Divider } from "./Components/Divider/Divider";

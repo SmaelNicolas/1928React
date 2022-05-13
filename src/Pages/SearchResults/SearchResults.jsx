@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ButtonMore } from "../../Components/ButtonMore/ButtonMore";
 import { Divider } from "../../Components/Divider/Divider";
 import { ItemCard } from "../../Components/ItemCard/ItemCard";
 import { Loader } from "../../Components/Loader/Loader";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import "./searchResults.css";
 import getProductsSearched from "../../Firebase/getDataSearched";
 import truckGif from "../../Assets/truck.gif";
