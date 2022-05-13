@@ -27,6 +27,9 @@ export const ItemCard = ({ item, hide }) => {
 		<div className='card'>
 			<Paper elevation={6}>
 				<div className='cardContainer'>
+					{item.stock === "false" && (
+						<div className='cardStock'>SIN STOCK</div>
+					)}
 					<img
 						className='cardImg'
 						src={item.img === "logo" ? imgBack : item.img}
@@ -93,6 +96,8 @@ export const ItemCard = ({ item, hide }) => {
 										loading='lazy'
 									/>
 								</div>
+								<Divider />
+								<div>{item.info}</div>
 							</Box>
 						</Fade>
 					</Modal>

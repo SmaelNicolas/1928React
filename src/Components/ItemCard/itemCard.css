@@ -2,6 +2,7 @@
 	width: 260px;
 	height: auto;
 	margin: 10px;
+	position: relative;
 }
 
 .cardContainer {
@@ -60,11 +61,23 @@
 	transform: translate(-50%, -50%);
 	background-color: rgba(0, 0, 0, 0.658);
 	display: flex;
+	flex-direction: column;
 	text-transform: uppercase;
 	justify-content: center;
 	align-items: center;
+	color: white;
 }
 
 .cardImgOnModal {
 	width: 100%;
+}
+
+.cardStock {
+	position: absolute;
+	right: 0px;
+	padding: 5px;
+	background-color: black;
+	color: white;
+	font-size: 15px;
+	font-weight: 400;
 }
