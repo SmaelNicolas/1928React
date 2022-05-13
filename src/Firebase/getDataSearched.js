@@ -14,7 +14,9 @@ async function getProductsSearched(setProducts, setLoader, query, setExist) {
 	//busca y devuelve un array por cada palabra
 	const productsSearched = queryWordsArray.map((word) => {
 		return products.map((prod) => {
-			return prod.description.includes(word) ? prod : undefined;
+			return prod.description.includes(word.toLowerCase())
+				? prod
+				: undefined;
 		});
 	});
 	let arrayComplete = [];
