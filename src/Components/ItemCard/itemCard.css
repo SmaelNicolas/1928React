@@ -85,3 +85,9 @@
 .hideButton {
 	display: none !important;
 }
+
+.iconCloseModal {
+	margin-bottom: 15px;
+	border-radius: 50%;
+	border: 1px solid white;
+}

@@ -11,6 +11,7 @@ import Fade from "@mui/material/Fade";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
+import CloseIcon from "@mui/icons-material/Close";
 
 import imgBack from "../../Assets/logoBck.jpg";
 
@@ -83,6 +84,10 @@ export const ItemCard = ({ item, hide }) => {
 					>
 						<Fade in={open}>
 							<Box className='boxModal'>
+								<CloseIcon
+									className='iconCloseModal'
+									onClick={handleClose}
+								/>
 								<div
 									id='transition-modal-description'
 									sx={{ mt: 2 }}
