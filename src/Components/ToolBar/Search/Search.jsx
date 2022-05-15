@@ -4,6 +4,8 @@ import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 
+import "./search.css";
+
 export const Search = () => {
 	const navigate = useNavigate();
 
@@ -49,7 +51,7 @@ export const Search = () => {
 	return (
 		<Search>
 			<SearchIconWrapper>
-				<SearchIcon sx={{ color: "black" }} />
+				<SearchIcon sx={{ color: "black" }} className='searchIcon' />
 			</SearchIconWrapper>
 			<StyledInputBase
 				placeholder='Buscar...'

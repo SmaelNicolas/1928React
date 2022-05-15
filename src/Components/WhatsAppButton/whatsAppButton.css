@@ -7,7 +7,6 @@
 	color: white;
 	border-radius: 50px;
 	font-size: 50px !important;
-	box-shadow: 2px 2px 3px #999;
 	z-index: 100;
 	cursor: pointer;
 	transition: 0.2s;

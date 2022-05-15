@@ -17,10 +17,7 @@ export const ListItemInCart = ({ cart, toggleDrawer }) => {
 	return cart.map((item) => (
 		<ListItem alignItems='flex-start' key={item.id}>
 			<ListItemAvatar>
-				<Avatar
-					alt='Travis Howard'
-					src='https://d3ugyf2ht6aenh.cloudfront.net/stores/001/141/936/products/d5ac0e9b-699f-442e-bde3-49a38312b2ee-a9723da1bacd0e0b6516480452162455-320-0.jpeg'
-				/>
+				<Avatar alt='Travis Howard' src={item.img} />
 			</ListItemAvatar>
 			<ListItemText
 				primary={
