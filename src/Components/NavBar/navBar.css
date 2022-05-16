@@ -39,6 +39,11 @@
 	display: none !important;
 }
 
+.logoResponsive {
+	margin-top: 20px;
+	width: 250px;
+}
+
 @media only screen and (max-width: 635px) {
 	.menuIcon {
 		display: flex !important;

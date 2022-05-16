@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import MenuIcon from "@mui/icons-material/Menu";
+import imgLogo from "../../Assets/logoBck.jpg";
 
 import { useNavigate } from "react-router-dom";
 
@@ -96,6 +97,11 @@ export const NavBar = () => {
 						<Tab
 							label='Contacto'
 							onClick={() => clickSection("contacto")}
+						/>
+						<img
+							className='logoResponsive'
+							src={imgLogo}
+							alt='logo 1928'
 						/>
 					</Tabs>
 				)}
