@@ -136,21 +136,14 @@ export const ItemCard = ({ item, hide }) => {
 						{!hide && item.type !== "jean" ? (
 							<div className='colorsContainer'>
 								<select
-									style={{
-										backgroundColor: color,
-									}}
 									className='selector'
 									onChange={(e) => setColor(e.target.value)}
 								>
 									<option value=''>Color</option>
 									{colorsArray.map((color) => (
-										<option
-											key={color}
-											value={color}
-											style={{
-												backgroundColor: color,
-											}}
-										></option>
+										<option key={color} value={color}>
+											{color.toUpperCase()}
+										</option>
 									))}
 								</select>
 							</div>
