@@ -1,12 +1,8 @@
 .whatsAppButton {
-	padding: 2px;
+	width: 40px;
 	position: fixed;
 	bottom: 15px;
 	right: 20px;
-	background-color: black;
-	color: white;
-	border-radius: 50px;
-	font-size: 50px !important;
 	z-index: 100;
 	cursor: pointer;
 	transition: 0.2s;
