@@ -1,0 +1,13 @@
+.iconToTop {
+	position: fixed;
+	bottom: 15px;
+	left: 5px;
+	z-index: 100;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.iconToTop:hover {
+	transform: scale(1.05);
+	transition: 0.2s;
+}
