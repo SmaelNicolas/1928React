@@ -121,7 +121,7 @@ export const ItemCard = ({ item, hide }) => {
 						<img
 							className='cardImg'
 							src={item.img === "logo" ? imgBack : item.img}
-							alt='img producto'
+							alt={item.title}
 							title={item.title.toUpperCase()}
 							loading='lazy'
 							onClick={handleOpen}
