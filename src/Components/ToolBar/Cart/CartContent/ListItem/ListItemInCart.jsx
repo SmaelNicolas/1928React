@@ -35,6 +35,7 @@ export const ListItemInCart = ({ cart, toggleDrawer }) => {
 						/>
 						<Box>
 							<Chip
+								sx={{ margin: "0px 5px" }}
 								icon={<AttachMoneyIcon />}
 								label={item.price * item.quantity}
 								variant='outlined'
@@ -42,13 +43,10 @@ export const ListItemInCart = ({ cart, toggleDrawer }) => {
 							/>
 							{item.type !== "jean" ? (
 								<Chip
-									style={{
-										backgroundColor: item.colorSelected,
-										color: "white",
-									}}
-									label='Color Elegido'
+									icon={<InfoIcon />}
+									label={`Color ${item.colorSelected}`}
 									variant='outlined'
-									size=''
+									size='small'
 								/>
 							) : (
 								<Chip
