@@ -7,7 +7,7 @@
 
 .cardContainer {
 	width: 260px;
-	height: 470px;
+	height: 490px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -37,6 +37,25 @@
 	justify-content: center;
 	align-items: center;
 	font-weight: 800;
+}
+
+.colorsContainer {
+	width: 100%;
+	height: 35px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 15px;
+}
+
+.colorOutside {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: row;
+	margin: 0px 5px;
 }
 
 .cardPayment {
@@ -93,7 +112,7 @@
 }
 
 .MuiSnackbarContent-root {
-	background-color: #4e9a51 !important;
+	background-color: #0a0a0a !important;
 }
 
 .MuiSnackbarContent-message {
@@ -101,4 +120,8 @@
 	font-weight: 500;
 	font-size: 15px;
 	text-transform: uppercase;
+}
+
+.selector {
+	width: 50%;
 }

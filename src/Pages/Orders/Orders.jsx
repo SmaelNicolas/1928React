@@ -476,7 +476,7 @@ export const Orders = () => {
 											name='user_cart'
 											defaultValue={cart.map(
 												(item) =>
-													`${item.title.toUpperCase()} x${
+													`${item.title.toUpperCase()} ${item.colorSelected.toUpperCase()} ${item.sizeSelected.toUpperCase()}  x${
 														item.quantity
 													} = $ ${
 														item.quantity *
@@ -521,8 +521,12 @@ export const Orders = () => {
 					</form>
 					<h2> Tus Productos</h2>
 					<div className='itemShowcaseContainer'>
-						{cart.map((item) => (
-							<ItemCard item={item} hide={true} key={item.id} />
+						{cart.map((item, index) => (
+							<ItemCard
+								item={item}
+								hide={true}
+								key={index + item.id}
+							/>
 						))}
 					</div>
 				</div>

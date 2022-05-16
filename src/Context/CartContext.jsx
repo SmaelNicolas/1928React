@@ -30,8 +30,18 @@ export const CartProvider = (props) => {
 		handleAdd();
 	};
 
-	const getItemFromCart = (id) => {
-		return cart.find((item) => item.id === id);
+	const getItemFromCart = (prod) => {
+		return prod.type !== "jean"
+			? cart.find(
+					(item) =>
+						item.id === prod.id &&
+						item.colorSelected === prod.colorSelected
+			  )
+			: cart.find(
+					(item) =>
+						item.id === prod.id &&
+						item.sizeSelected === prod.sizeSelected
+			  );
 	};
 
 	const getAllItemsFromCart = () => {
@@ -39,7 +49,7 @@ export const CartProvider = (props) => {
 	};
 
 	function addItemToCart(item) {
-		const itemInCart = getItemFromCart(item.id);
+		const itemInCart = getItemFromCart(item);
 		if (itemInCart) {
 			itemInCart.quantity++;
 			setCart([...cart]);
@@ -50,12 +60,30 @@ export const CartProvider = (props) => {
 	}
 
 	const deleteItemInCart = (item) => {
-		const itemInCart = getItemFromCart(item.id);
+		const itemInCart = getItemFromCart(item);
 		if (itemInCart.quantity > 1) {
 			itemInCart.quantity--;
 			setCart([...cart]);
 		} else {
-			setCart(cart.filter((it) => it.id !== item.id));
+			item.type !== "jean"
+				? setCart(
+						cart.filter((it) =>
+							it.id !== item.id
+								? it
+								: item.colorSelected !== it.colorSelected
+								? it
+								: undefined
+						)
+				  )
+				: setCart(
+						cart.filter((it) =>
+							it.id !== item.id
+								? it
+								: item.sizeSelected !== it.sizeSelected
+								? it
+								: undefined
+						)
+				  );
 		}
 		handleAdd();
 	};

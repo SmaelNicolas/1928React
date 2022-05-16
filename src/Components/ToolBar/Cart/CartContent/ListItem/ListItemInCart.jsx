@@ -8,14 +8,15 @@ import Chip from "@mui/material/Chip";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import { Stack, TextField } from "@mui/material";
+import InfoIcon from "@mui/icons-material/Info";
+import { Box, Stack, TextField } from "@mui/material";
 import { CartContext } from "../../../../../Context/CartContext";
 
 export const ListItemInCart = ({ cart, toggleDrawer }) => {
 	const { deleteItemInCart } = useContext(CartContext);
 
-	return cart.map((item) => (
-		<ListItem alignItems='flex-start' key={item.id}>
+	return cart.map((item, index) => (
+		<ListItem alignItems='flex-start' key={index + item.id}>
 			<ListItemAvatar>
 				<Avatar alt='Travis Howard' src={item.img} />
 			</ListItemAvatar>
@@ -32,12 +33,33 @@ export const ListItemInCart = ({ cart, toggleDrawer }) => {
 								readOnly: true,
 							}}
 						/>
-						<Chip
-							icon={<AttachMoneyIcon />}
-							label={item.price * item.quantity}
-							variant='outlined'
-							size='small'
-						/>
+						<Box>
+							<Chip
+								icon={<AttachMoneyIcon />}
+								label={item.price * item.quantity}
+								variant='outlined'
+								size='small'
+							/>
+							{item.type !== "jean" ? (
+								<Chip
+									style={{
+										backgroundColor: item.colorSelected,
+										color: "white",
+									}}
+									label='Color Elegido'
+									variant='outlined'
+									size=''
+								/>
+							) : (
+								<Chip
+									icon={<InfoIcon />}
+									label={`Talle ${item.sizeSelected}`}
+									variant='outlined'
+									size='small'
+								/>
+							)}
+						</Box>
+
 						<Button
 							variant='outlined'
 							startIcon={<DeleteIcon />}
