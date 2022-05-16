@@ -75,7 +75,7 @@ export const ContactForm = () => {
 			<Box sx={{ maxWidth: 400 }}>
 				<Stepper activeStep={activeStep} orientation='vertical'>
 					<Step>
-						<StepLabel>Nombre - Telefono - Email</StepLabel>
+						<StepLabel>Nombre - Teléfono - Email</StepLabel>
 						<StepContent>
 							<TextField
 								id='name'
@@ -90,7 +90,7 @@ export const ContactForm = () => {
 							/>
 							<TextField
 								id='phone'
-								label={phone !== "" ? "" : "Telefono"}
+								label={phone !== "" ? "" : "Teléfono"}
 								value={phone !== "" ? phone : ""}
 								variant='outlined'
 								required={true}

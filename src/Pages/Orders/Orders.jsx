@@ -145,7 +145,7 @@ export const Orders = () => {
 							>
 								<Step>
 									<StepLabel>
-										Nombre - Telefono - Email - Dirección
+										Nombre - Teléfono - Email - Dirección
 									</StepLabel>
 									<StepContent>
 										<TextField
@@ -202,7 +202,7 @@ export const Orders = () => {
 										<TextField
 											id='phone'
 											label={
-												phone !== "" ? "" : "Telefono"
+												phone !== "" ? "" : "Teléfono"
 											}
 											value={phone !== "" ? phone : ""}
 											variant='outlined'
@@ -268,9 +268,9 @@ export const Orders = () => {
 													Retiro por el showroom
 												</MenuItem>
 												<MenuItem
-													value={"Envio a domicilio"}
+													value={"Envío a domicilio"}
 												>
-													Envio a domicilio
+													Envío a domicilio
 												</MenuItem>
 											</Select>
 										</FormControl>
@@ -319,12 +319,12 @@ export const Orders = () => {
 												<MenuItem
 													value={"Tarjeta Debito"}
 												>
-													Tarjeta Debito
+													Tarjeta Débito
 												</MenuItem>
 												<MenuItem
 													value={"Tarjeta Credito"}
 												>
-													Tarjeta Credito
+													Tarjeta Crédito
 												</MenuItem>
 												<MenuItem
 													value={"Transferencia"}
@@ -359,7 +359,7 @@ export const Orders = () => {
 									</StepContent>
 								</Step>
 								<Step>
-									<StepLabel>Cupon - Mensaje</StepLabel>
+									<StepLabel>Cupón - Mensaje</StepLabel>
 									<StepContent>
 										<TextField
 											id='cupon'
