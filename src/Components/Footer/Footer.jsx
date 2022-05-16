@@ -26,7 +26,7 @@ export const Footer = () => {
 					/>
 					<div className='footerInfoLabelsText'>
 						<p className='footerInfoLabelsTextTitle'>
-							COMPRA Y RELAJATE
+							COMPRÁ Y RELAJATE
 						</p>
 						<p className='footerInfoLabelsTextSubtitle'>
 							Envíos a todo el país
@@ -40,7 +40,7 @@ export const Footer = () => {
 					/>
 					<div className='footerInfoLabelsText'>
 						<p className='footerInfoLabelsTextTitle'>
-							PAGÁ COMO MAS TE GUSTE
+							PAGÁ COMO MÁS TE GUSTE
 						</p>
 						<p className='footerInfoLabelsTextSubtitle'>
 							Tarjetas , Efectivo , QR , Link , Transferencias
@@ -54,10 +54,10 @@ export const Footer = () => {
 					/>
 					<div className='footerInfoLabelsText'>
 						<p className='footerInfoLabelsTextTitle'>
-							TENES DUDAS DE TU TALLE
+							TENÉS DUDAS DE TU TALLE
 						</p>
 						<p className='footerInfoLabelsTextSubtitle'>
-							Contactános por cualquier medio y te ayudamos
+							Contactanos por cualquier medio y te ayudamos
 						</p>
 					</div>
 				</div>
@@ -107,7 +107,7 @@ export const Footer = () => {
 							<PlaceIcon />
 						</IconButton>
 						<p className='footerContactDirectInfoText'>
-							Panama 1259 - Bahía Blanca
+							Panamá 1259 - Bahía Blanca
 						</p>
 					</div>
 				</div>

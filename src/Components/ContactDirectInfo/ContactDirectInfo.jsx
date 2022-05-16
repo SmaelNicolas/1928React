@@ -45,7 +45,7 @@ export const ContactDirectInfo = () => {
 			/>
 			<Chip
 				icon={<PlaceIcon />}
-				label='Panama 1259 , Bahía Blanca'
+				label='Panamá 1259 , Bahía Blanca'
 				variant='outlined'
 				className='stackContactChip'
 				onClick={() =>
