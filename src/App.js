@@ -18,6 +18,7 @@ import { Contact } from "./Pages/Contact/Contact";
 import { WhatsappButton } from "./Components/WhatsAppButton/WhatsappButton";
 import { ToTopButton } from "./Components/ToTopButton/ToTopButton";
 import { MailchimpSubscribe } from "./Components/MailchimpSubscribe/MailchimpSubscribe";
+import { ThankYou } from "./Pages/ThankYou/ThankYou";
 
 function App() {
 	return (
@@ -40,6 +41,7 @@ function App() {
 					<Route path='contacto' element={<Contact />} />
 					<Route path='search/:query' element={<SearchResults />} />
 					<Route path='search/' element={<Home />} />
+					<Route path='thankyou' element={<ThankYou />} />
 					<Route path='*' element={<Home />} />
 				</Routes>
 				<Divider />

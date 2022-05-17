@@ -1,0 +1,26 @@
+.formSubscriberContainer {
+	width: 100%;
+	padding: 0px 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.formTitle {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.formLabelContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.ButtonSubscribe {
+	margin: 10px 0px;
+}
+
+.buttonSocialsThankYou {
+	width: 150px;
+}

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Button, TextField } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 import "./mailchimpSubscriber.css";
 
 export const MailchimpSubscribe = () => {
@@ -12,41 +14,26 @@ export const MailchimpSubscribe = () => {
 				id='mc-embedded-subscribe-form'
 				name='mc-embedded-subscribe-form'
 				className='validate'
-				target='_blank'
 				noValidate
 			>
-				<div
-					className='formSubscriberContainer'
-					id='mc_embed_signup_scroll'
-				>
-					<h2>Recibi info y descuentos extras!</h2>
-					<div className='mc-field-group'>
-						<label htmlFor='mce-EMAIL'>
-							Email Address <span className='asterisk'>*</span>
-						</label>
-						<input
+				<div className='formSubscriberContainer'>
+					<h2 className='title formTitle'>
+						Recibi info y descuentos extras!
+					</h2>
+					<div className='formLabelContainer'>
+						<TextField
 							type='email'
-							value={value}
+							label='Dejanos tu Email'
+							variant='filled'
 							name='EMAIL'
 							className='required email'
 							id='mce-EMAIL'
+							value={value}
 							onChange={(e) => setValue(e.target.value)}
 						/>
 					</div>
 					<div hidden={true}>
 						<input type='hidden' name='tags' value='12520243' />
-					</div>
-					<div id='mce-responses' className='clear foot'>
-						<div
-							className='response'
-							id='mce-error-response'
-							style={{ display: "none" }}
-						></div>
-						<div
-							className='response'
-							id='mce-success-response'
-							style={{ display: "none" }}
-						></div>
 					</div>
 					<div
 						style={{ position: "absolute", left: "-5000px" }}
@@ -60,16 +47,16 @@ export const MailchimpSubscribe = () => {
 							readOnly
 						/>
 					</div>
-					<div className='optionalParent'>
-						<div className='clear foot'>
-							<input
-								type='submit'
-								value='Subscribe'
-								name='subscribe'
-								id='mc-embedded-subscribe'
-								className='button'
-							/>
-						</div>
+					<div className='ButtonSubscribe'>
+						<Button
+							variant='contained'
+							endIcon={<SendIcon />}
+							type='submit'
+							name='subscribe'
+							id='mc-embedded-subscribe'
+						>
+							Suscribirse
+						</Button>
 					</div>
 				</div>
 			</form>
