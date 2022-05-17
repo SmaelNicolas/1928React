@@ -17,6 +17,7 @@ import { Accesorios } from "./Pages/Accesorios/Accesorios";
 import { Contact } from "./Pages/Contact/Contact";
 import { WhatsappButton } from "./Components/WhatsAppButton/WhatsappButton";
 import { ToTopButton } from "./Components/ToTopButton/ToTopButton";
+import { MailchimpSubscribe } from "./Components/MailchimpSubscribe/MailchimpSubscribe";
 
 function App() {
 	return (
@@ -44,6 +45,9 @@ function App() {
 				<Divider />
 				<Divider />
 				<Footer />
+				<Divider />
+				<MailchimpSubscribe />
+				<Divider />
 			</div>
 		</CartProvider>
 	);
