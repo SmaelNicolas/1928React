@@ -64,8 +64,8 @@
 }
 
 .boxModal {
-	max-width: 700px;
-	min-width: 400px;
+	max-width: 750px;
+	min-width: 450px;
 	position: absolute;
 	padding: 40px;
 	top: 50%;
@@ -80,10 +80,6 @@
 	color: white;
 }
 
-.cardImgOnModal {
-	width: 100%;
-}
-
 .cardStock {
 	position: absolute;
 	right: 0px;
@@ -96,13 +92,6 @@
 
 .hideButton {
 	display: none !important;
-}
-
-.iconCloseModal {
-	margin-bottom: 15px;
-	border-radius: 50%;
-	border: 1px solid white;
-	cursor: pointer;
 }
 
 .MuiSnackbarContent-root {

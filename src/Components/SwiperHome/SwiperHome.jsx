@@ -37,6 +37,7 @@ export const SwiperHome = () => {
 						src={photo.img}
 						alt='slider product'
 						title='Slider Image'
+						className='swiperImageHome'
 					/>
 				</SwiperSlide>
 			))}

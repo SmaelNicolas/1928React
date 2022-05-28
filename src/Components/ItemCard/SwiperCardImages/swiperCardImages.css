@@ -3,19 +3,6 @@
 	height: 300px;
 }
 
-.cardImgOnModal {
-	width: 80% !important;
-	height: auto !important;
-	align-self: flex-start !important;
-	aspect-ratio: unset !important;
-	cursor: default !important;
-}
-
-.swiperCardModal {
-	max-width: 400px;
-	height: auto;
-}
-
 .cardImg {
 	width: 230px !important;
 	height: 300px !important;
@@ -24,7 +11,32 @@
 	aspect-ratio: 16 / 9 !important;
 }
 
+/* MODAL  */
+
+.iconCloseModal {
+	margin-bottom: 15px;
+	border-radius: 50%;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+.cardImgOnModal {
+	width: 100%;
+	height: 100%;
+	align-self: center;
+	aspect-ratio: 16 / 9;
+	cursor: default;
+}
+
+.swiperCardModal {
+	max-width: 350px;
+	height: 450px !important;
+}
+
 .swiperCardImageSlideModal {
-	width: 100% !important;
-	height: 350px !important;
+	max-width: 350px;
+	height: auto !important;
+
+	/* width: 100% !important;
+	height: 350px !important; */
 }
