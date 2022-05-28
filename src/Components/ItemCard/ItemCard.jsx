@@ -4,24 +4,16 @@ import Button from "@mui/material/Button";
 import { Divider } from "../Divider/Divider";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { CartContext } from "../../Context/CartContext";
-import Backdrop from "@mui/material/Backdrop";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
-import CloseIcon from "@mui/icons-material/Close";
 import Snackbar from "@mui/material/Snackbar";
-import NewReleasesIcon from "@mui/icons-material/NewReleases";
-
-import imgBack from "../../Assets/logoBck.jpg";
 
 import "./itemCard.css";
+import { SwiperCardImages } from "./SwiperCardImages/SwiperCardImages";
 
 export const ItemCard = ({ item, hide }) => {
 	const { addItemToCart } = useContext(CartContext);
-	const [openModal, setOpenModal] = useState(false);
 	const [colorsArray] = useState(item.colorsAvailable.split(" "));
 	const [tallesArray] = useState(item.sizesAvailable.split(" "));
 	const [color, setColor] = useState("");
@@ -39,7 +31,7 @@ export const ItemCard = ({ item, hide }) => {
 	});
 
 	const { vertical, horizontal, open } = openSnack;
-	const { vertical2, horizontal2, open2 } = openSnackError;
+	const { open2 } = openSnackError;
 
 	const handleSnackBar = () => {
 		setOpenSnack({ open: true, vertical: "top", horizontal: "right" });
@@ -93,9 +85,6 @@ export const ItemCard = ({ item, hide }) => {
 		}
 	};
 
-	const handleOpen = () => setOpenModal(true);
-	const handleClose = () => setOpenModal(false);
-
 	return (
 		<>
 			<Snackbar
@@ -118,14 +107,7 @@ export const ItemCard = ({ item, hide }) => {
 						{item.stock === "false" && (
 							<div className='cardStock'>SIN STOCK</div>
 						)}
-						<img
-							className='cardImg'
-							src={item.img === "logo" ? imgBack : item.img}
-							alt={item.title}
-							title={item.title.toUpperCase()}
-							loading='lazy'
-							onClick={handleOpen}
-						/>
+						<SwiperCardImages item={item} />
 						<div className='cardTitle'>
 							{item.title.toUpperCase()}
 						</div>
@@ -167,7 +149,6 @@ export const ItemCard = ({ item, hide }) => {
 								</div>
 							)
 						)}
-
 						<div className='cardPayment'>
 							<CreditScoreIcon />
 							<p className='cardPaymentText'>
@@ -195,46 +176,6 @@ export const ItemCard = ({ item, hide }) => {
 							</Button>
 						)}
 						<Divider />
-					</div>
-					<div>
-						<Modal
-							aria-labelledby='transition-modal-title'
-							aria-describedby='transition-modal-description'
-							open={openModal}
-							onClose={handleClose}
-							closeAfterTransition
-							BackdropComponent={Backdrop}
-							BackdropProps={{
-								timeout: 500,
-							}}
-						>
-							<Fade in={openModal}>
-								<Box className='boxModal'>
-									<CloseIcon
-										className='iconCloseModal'
-										onClick={handleClose}
-									/>
-									<div
-										id='transition-modal-description'
-										sx={{ mt: 2 }}
-									>
-										<img
-											className='cardImgOnModal'
-											src={
-												item.img === "logo"
-													? imgBack
-													: item.img
-											}
-											alt='img producto'
-											title={item.title}
-											loading='lazy'
-										/>
-									</div>
-									<Divider />
-									<div>{item.info}</div>
-								</Box>
-							</Fade>
-						</Modal>
 					</div>
 				</Paper>
 			</div>

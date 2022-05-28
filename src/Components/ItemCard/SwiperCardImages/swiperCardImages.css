@@ -1,0 +1,25 @@
+.swiperCardImage {
+	width: 230px;
+	height: 300px;
+}
+
+.cardImgOnModal {
+	width: 100% !important;
+	height: 500px !important;
+	align-self: flex-start !important;
+	aspect-ratio: unset !important;
+	cursor: default !important;
+}
+
+.swiperCardModal {
+	max-width: 500px;
+	height: 500px;
+}
+
+.cardImg {
+	width: 230px !important;
+	height: 300px !important;
+	align-self: flex-start !important;
+	cursor: zoom-in !important;
+	aspect-ratio: 16 / 9 !important;
+}
