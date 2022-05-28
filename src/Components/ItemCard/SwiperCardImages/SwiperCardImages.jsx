@@ -67,7 +67,7 @@ export const SwiperCardImages = ({ item }) => {
 						>
 							{imgsArray.map((img) => (
 								<SwiperSlide
-									className='swiperCardImageSlide'
+									className='swiperCardImageSlideModal'
 									key={img}
 								>
 									<img
