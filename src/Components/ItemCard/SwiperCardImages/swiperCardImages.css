@@ -40,3 +40,11 @@
 	/* width: 100% !important;
 	height: 350px !important; */
 }
+
+.modalText {
+	width: 90%;
+	padding: 10px;
+	color: white;
+	text-transform: uppercase;
+	font-size: 15px;
+}

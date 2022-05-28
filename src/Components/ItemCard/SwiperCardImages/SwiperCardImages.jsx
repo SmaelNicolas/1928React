@@ -84,7 +84,7 @@ export const SwiperCardImages = ({ item }) => {
 							))}
 						</Swiper>
 						<Divider />
-						<div>{item.info}</div>
+						<div className='modalText'>{item.info}</div>
 					</Box>
 				</Fade>
 			</Modal>
