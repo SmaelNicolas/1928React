@@ -44,7 +44,7 @@
 	width: 250px;
 }
 
-@media only screen and (max-width: 635px) {
+@media only screen and (max-width: 953px) {
 	.menuIcon {
 		display: flex !important;
 		position: fixed;

@@ -11,7 +11,7 @@
 	justify-content: space-between;
 }
 
-@media only screen and (max-width: 635px) {
+@media only screen and (max-width: 953px) {
 	.topBar {
 		display: none;
 	}

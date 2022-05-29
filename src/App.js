@@ -19,6 +19,7 @@ import { WhatsappButton } from "./Components/WhatsAppButton/WhatsappButton";
 import { ToTopButton } from "./Components/ToTopButton/ToTopButton";
 import { MailchimpSubscribe } from "./Components/MailchimpSubscribe/MailchimpSubscribe";
 import { ThankYou } from "./Pages/ThankYou/ThankYou";
+import { Camperas } from "./Pages/Camperas/Camperas";
 
 function App() {
 	return (
@@ -36,6 +37,7 @@ function App() {
 					<Route path='remeras' element={<Remeras />} />
 					<Route path='jeans' element={<Jeans />} />
 					<Route path='sweaters' element={<Sweaters />} />
+					<Route path='camperas' element={<Camperas />} />
 					<Route path='accesorios' element={<Accesorios />} />
 					<Route path='productos' element={<Todos />} />
 					<Route path='contacto' element={<Contact />} />

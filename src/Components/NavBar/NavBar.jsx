@@ -50,14 +50,21 @@ export const NavBar = () => {
 					className='tabsContainer'
 				>
 					<Tab label='Inicio' onClick={() => clickSection("")} />
-					<Tab label='Jeans' onClick={() => clickSection("jeans")} />
 					<Tab
-						label='Remeras'
+						label='Jeans Y Pantalones'
+						onClick={() => clickSection("jeans")}
+					/>
+					<Tab
+						label='Remeras Y Tops'
 						onClick={() => clickSection("remeras")}
 					/>
 					<Tab
 						label='Sweaters'
 						onClick={() => clickSection("sweaters")}
+					/>
+					<Tab
+						label='Camperas y Abrigos'
+						onClick={() => clickSection("camperas")}
 					/>
 					<Tab
 						label='Accesorios'
@@ -79,16 +86,20 @@ export const NavBar = () => {
 					>
 						<Tab label='Inicio' onClick={() => clickSection("")} />
 						<Tab
-							label='Jeans'
+							label='Jeans Y Pantalones'
 							onClick={() => clickSection("jeans")}
 						/>
 						<Tab
-							label='Remeras'
+							label='Remeras Y Tops'
 							onClick={() => clickSection("remeras")}
 						/>
 						<Tab
 							label='Sweaters'
 							onClick={() => clickSection("sweaters")}
+						/>
+						<Tab
+							label='Camperas y Abrigos'
+							onClick={() => clickSection("camperas")}
 						/>
 						<Tab
 							label='Accesorios'
