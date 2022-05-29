@@ -25,7 +25,7 @@ export const Camperas = () => {
 				</h1>
 				<h2 className='title'>CAMPERAS</h2>
 				<Divider />
-				<ItemShowcase value={"camperas"} />
+				<ItemShowcase value={"campera"} />
 				<Divider />
 				<Divider />
 				<ButtonMore
