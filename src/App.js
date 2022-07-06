@@ -27,7 +27,7 @@ function App() {
 		<CartProvider>
 			<div className='app'>
 				<TestUploader />
-				<WhatsappButton />
+				{/* <WhatsappButton />
 				<ToTopButton />
 				<TopBar />
 				<ToolBar />
@@ -53,7 +53,7 @@ function App() {
 				<Footer />
 				<Divider />
 				<MailchimpSubscribe />
-				<Divider />
+				<Divider /> */}
 			</div>
 		</CartProvider>
 	);
