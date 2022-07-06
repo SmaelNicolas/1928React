@@ -20,11 +20,13 @@ import { ToTopButton } from "./Components/ToTopButton/ToTopButton";
 import { MailchimpSubscribe } from "./Components/MailchimpSubscribe/MailchimpSubscribe";
 import { ThankYou } from "./Pages/ThankYou/ThankYou";
 import { Camperas } from "./Pages/Camperas/Camperas";
+import { TestUploader } from "./Components/TestUploader/TestUploader";
 
 function App() {
 	return (
 		<CartProvider>
 			<div className='app'>
+				<TestUploader />
 				<WhatsappButton />
 				<ToTopButton />
 				<TopBar />
